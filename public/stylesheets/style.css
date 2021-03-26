@@ -3,3 +3,50 @@ form.login {
   margin-top: 50px;
 }
 
+.memberIcons {
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+}
+
+.iconCaption {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.figArea {
+  text-align: center;
+  height: 90px;
+}
+
+#foodFig {
+  float: left;
+  margin-left: 15%;
+  margin-right: 10%;
+}
+
+#golfFig {
+  float: left;
+  margin-right: 10%;
+}
+
+#tennisFig {
+  float: left;
+  margin-left: 15%;
+  margin-right: 10%;
+}
+
+#waterparkFig {
+  float: left;
+  margin-right: 10%;
+}
+
+#gymFig {
+  float: left;
+  margin-right: 10%;
+}
+
+#ziplineFig {
+  float: left;
+  margin-right: 10%;
+}
