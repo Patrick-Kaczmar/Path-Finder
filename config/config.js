@@ -12,6 +12,7 @@ const config =
     "password": null,
     "database": "database_test",
     "host": "127.0.0.1",
+    "port": 3306,
     "dialect": "mysql"
   },
   "production": {
@@ -19,7 +20,9 @@ const config =
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
+    "port": 3306,
     "dialect": "mysql"
   }
 }
-module.export = config;
+
+module.exports = config;
