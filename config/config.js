@@ -1,8 +1,9 @@
+const config = 
 {
   "development": {
-    "username": "root",
-    "password": "Andromeda123",
-    "database": "path_finder_db",
+    "username": process.env.DB_USER,
+    "password": process.env.DB_PASSWORD,
+    "database": process.env.DB_NAME,
     "host": "localhost",
     "port": 3306,
     "dialect": "mysql"
@@ -22,3 +23,5 @@
     "dialect": "mysql"
   }
 }
+
+module.exports = config;
