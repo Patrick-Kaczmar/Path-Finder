@@ -1,6 +1,34 @@
+p {
+  font-size: 18px;
+}
+
+a:hover {
+  color: #3473B1;
+}
+
 form.signup,
 form.login {
   margin-top: 50px;
+}
+
+.signup-login-nav {
+  background: #a4d1ff;
+}
+
+.form-group {
+  font-size: 20px;
+}
+
+.signup-login-btn {
+  height: 70px;
+  width: 120px;
+  background: #3473B1;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  padding: 15px;
+  text-decoration: none;
 }
 
 .memberIcons {
@@ -39,21 +67,29 @@ form.login {
 .activity-link:hover {
   color: #3473B1;
 }
+
 .members-nav {
+  display: flex;
+  justify-content: space-between;
   background: #112B43;
   padding: 20px 35px;
+  margin: 0;
   border: none;
   box-shadow: 2px 2px 2px 4px #112B43;
 }
 
 #logout {
-  display: flex;
-  align-self: flex-end;
+  /* display: flex;
+  align-self: flex-start; */
   font-weight: bold;
   background: #AFD687;
   border-radius: 50%;
-  
 }
+
+/* #arrow-icon {
+  display: inline;
+} */
+
 /* #foodFig {
   float: left;
   margin-left: 15%;

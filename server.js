@@ -1,4 +1,3 @@
-require('dotenv').config()
 // Requiring necessary npm packages
 require('dotenv').config()
 var express = require("express");
