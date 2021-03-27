@@ -27,5 +27,9 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
-
+  
+  // route to display tennis handlebars when icon clicked
+  app.get("/members/tennis", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/index-tennis.handlebars"));
+  });
 };
