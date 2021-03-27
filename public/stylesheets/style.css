@@ -86,38 +86,19 @@ form.login {
   border-radius: 50%;
 }
 
-/* #arrow-icon {
-  display: inline;
-} */
-
 /* #foodFig {
   float: left;
   margin-left: 15%;
   margin-right: 10%;
-}
-
-#golfFig {
-  float: left;
-  margin-right: 10%;
-}
-
-#tennisFig {
-  float: left;
-  margin-left: 15%;
-  margin-right: 10%;
-}
-
-#waterparkFig {
-  float: left;
-  margin-right: 10%;
-}
-
-#gymFig {
-  float: left;
-  margin-right: 10%;
-}
-
-#ziplineFig {
-  float: left;
-  margin-right: 10%;
 } */
+
+#map {
+  height: 100%;
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
