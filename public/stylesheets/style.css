@@ -2,3 +2,61 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+.memberIcons {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  cursor: pointer;
+  margin: 50px;
+}
+
+.iconCaption {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.figArea {
+  text-align: center;
+  height: 90px;
+}
+
+.figure-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+/* #foodFig {
+  float: left;
+  margin-left: 15%;
+  margin-right: 10%;
+}
+
+#golfFig {
+  float: left;
+  margin-right: 10%;
+}
+
+#tennisFig {
+  float: left;
+  margin-left: 15%;
+  margin-right: 10%;
+}
+
+#waterparkFig {
+  float: left;
+  margin-right: 10%;
+}
+
+#gymFig {
+  float: left;
+  margin-right: 10%;
+}
+
+#ziplineFig {
+  float: left;
+  margin-right: 10%;
+} */
