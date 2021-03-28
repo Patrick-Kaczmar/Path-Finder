@@ -38,4 +38,9 @@ module.exports = function(app) {
     
     res.render("category");
   });
+
+  app.get("/views/index-gym.handlebars", function(req, res) {
+    
+    res.render("gym");
+  });
 };

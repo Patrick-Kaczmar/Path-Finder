@@ -86,14 +86,8 @@ form.login {
   border-radius: 50%;
 }
 
-/* #foodFig {
-  float: left;
-  margin-left: 15%;
-  margin-right: 10%;
-} */
-
 #map {
-  height: 100%;
+  height: 50%;
 }
 
 
