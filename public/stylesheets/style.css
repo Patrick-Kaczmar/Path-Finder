@@ -1,6 +1,34 @@
+p {
+  font-size: 18px;
+}
+
+a:hover {
+  color: #3473B1;
+}
+
 form.signup,
 form.login {
   margin-top: 50px;
+}
+
+.signup-login-nav {
+  background: #a4d1ff;
+}
+
+.form-group {
+  font-size: 20px;
+}
+
+.signup-login-btn {
+  height: 70px;
+  width: 120px;
+  background: #3473B1;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  padding: 15px;
+  text-decoration: none;
 }
 
 .memberIcons {
@@ -9,6 +37,7 @@ form.login {
   width: 200px;
   cursor: pointer;
   margin: 50px;
+  box-shadow: 2px 2px 10px 2px rgb(77, 77, 77);
 }
 
 .iconCaption {
@@ -29,34 +58,47 @@ form.login {
   margin: 0 auto;
 }
 
+.activity-link {
+  color: rgb(78, 78, 78);
+  text-decoration: none !important;
+  transition: 0.15s ease-in-out;
+}
+
+.activity-link:hover {
+  color: #3473B1;
+}
+
+.members-nav {
+  display: flex;
+  justify-content: space-between;
+  background: #112B43;
+  padding: 20px 35px;
+  margin: 0;
+  border: none;
+  box-shadow: 2px 2px 2px 4px #112B43;
+}
+
+#logout {
+  /* display: flex;
+  align-self: flex-start; */
+  font-weight: bold;
+  background: #AFD687;
+  border-radius: 50%;
+}
+
 /* #foodFig {
   float: left;
   margin-left: 15%;
   margin-right: 10%;
-}
-
-#golfFig {
-  float: left;
-  margin-right: 10%;
-}
-
-#tennisFig {
-  float: left;
-  margin-left: 15%;
-  margin-right: 10%;
-}
-
-#waterparkFig {
-  float: left;
-  margin-right: 10%;
-}
-
-#gymFig {
-  float: left;
-  margin-right: 10%;
-}
-
-#ziplineFig {
-  float: left;
-  margin-right: 10%;
 } */
+
+#map {
+  height: 100%;
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
