@@ -1,6 +1,6 @@
 let Sequelize = require("sequelize");
 
-let sequelize = new Sequelize("path_finder_db", "root", "Andromeda123", {
+let sequelize = new Sequelize("path_finder_db", "root", "rootroot", {
     host: "localhost",
     port: 3306,
     dialect: "mysql",

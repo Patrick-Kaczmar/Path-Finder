@@ -25,5 +25,13 @@
   },
   "devDependencies": {
     "sequelize-cli": "^6.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Patrick-Kaczmar/Path-Finder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Patrick-Kaczmar/Path-Finder/issues"
+  },
+  "homepage": "https://github.com/Patrick-Kaczmar/Path-Finder#readme"
 }
