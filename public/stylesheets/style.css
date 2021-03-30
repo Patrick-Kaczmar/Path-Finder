@@ -92,6 +92,9 @@ form.login {
   height: 100%;
 }
 
+#potato {
+  height: 50%;
+}
 
 html, body {
   height: 100%;
