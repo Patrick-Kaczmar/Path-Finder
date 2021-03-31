@@ -14,11 +14,10 @@ function getLocation() {
 
 
 function initMap(latitude, longitude) {
-    // let directionsService = new google.maps.DirectionsService();
-    // let directionsRenderer = new google.maps.DirectionsRenderer();
+
     map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: latitude, lng: longitude },
-        zoom: 10,
+        zoom: 11,
     });
 
     service = new google.maps.places.PlacesService(map);
@@ -33,10 +32,11 @@ function initMap(latitude, longitude) {
     };
 
     service.nearbySearch(
-        { location: { lat: latitude, lng: longitude }, radius: 10000, type: "gym" },
+        { location: { lat: latitude, lng: longitude }, radius: 5000, type: "gym" },
         (results, status, pagination) => {
             if (status !== "OK" || !results) return;
-            addPlaces(results, map);
+            console.log(results)
+            addPlaces(results, map, latitude, longitude);
             moreButton.disabled = !pagination || !pagination.hasNextPage;
 
             if (pagination && pagination.hasNextPage) {
@@ -47,13 +47,11 @@ function initMap(latitude, longitude) {
             }
         }
     );
-
-
-    // directionsRenderer.setMap(map);
-    // calculateAndDisplayRoute(directionsService, directionsRenderer, latitude, longitude);
 }
 
-function addPlaces(places, map) {
+function addPlaces(places, map, latitude, longitude) {
+    let directionsService = new google.maps.DirectionsService();
+    let directionsRenderer = new google.maps.DirectionsRenderer();
     const placesList = document.getElementById("places");
 
     for (const place of places) {
@@ -76,10 +74,14 @@ function addPlaces(places, map) {
             placesList.appendChild(li);
             li.addEventListener("click", () => {
                 map.setCenter(place.geometry.location);
+                let endpoint = place.vicinity;
+                directionsRenderer.setMap(map);
+                calculateAndDisplayRoute(directionsService, directionsRenderer, latitude, longitude, endpoint);
             });
         }
     }
 }
+
 function geoWeather(latitude, longitude) {
     geoWeatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + Math.floor(latitude) + "&lon=" + Math.floor(longitude) + "&appid=2c96103d1d31364a22258e5a870054a8";
     // const locationWeather = document.getElementById("locationWeather");
@@ -103,3 +105,26 @@ function geoWeather(latitude, longitude) {
         // locationWeather.appendChild(todayWeather);
     })
 }
+
+
+function calculateAndDisplayRoute(directionsService, directionsRenderer, latitude, longitude, endpoint) {
+    directionsService.route(
+        {
+            origin: {
+                query: `${latitude}, ${longitude}`
+            },
+            destination: {
+                query: `${endpoint}`
+            },
+            travelMode: google.maps.TravelMode.DRIVING,
+        },
+        (response, status) => {
+            if (status === "OK") {
+                directionsRenderer.setDirections(response);
+            } else {
+                window.alert("Directions request failed due to " + status);
+            }
+        }
+    );
+}
+
