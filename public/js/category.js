@@ -72,21 +72,21 @@ function addPlaces(places, map, latitude, longitude) {
                     placeId: place.place_id,
                     fields: ['name', 'formatted_address', 'photos', 'opening_hours', 'url', 'website']
                 };
-                service.getDetails(request, callback);
+                service.getDetails(request, (place, status) => {
+                    if (status === google.maps.places.PlacesServiceStatus.OK) {
+                        console.log(place)
+                    }
+                });
             });
         }
     }
 }
 
-function getDetails(request) {
-    console.log(request);
-}
-
 function callback(place, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-      console.log(`you are viewing ${place.name}`)
+        console.log(`you are viewing ${place.name}`)
     }
-  }
+}
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer, latitude, longitude, endpoint) {
     directionsService.route(
