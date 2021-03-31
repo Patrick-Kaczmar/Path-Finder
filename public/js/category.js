@@ -7,7 +7,7 @@ function getLocation() {
         let longitude = currentPosition.coords.longitude;
         result = [latitude, longitude]
         initMap(latitude, longitude);
-        geoWeather(latitude, longitude);
+        // geoWeather(latitude, longitude);
     });
 }
 
@@ -56,16 +56,8 @@ function addPlaces(places, map, latitude, longitude) {
 
     for (const place of places) {
         if (place.geometry && place.geometry.location) {
-            const image = {
-                url: place.icon,
-                size: new google.maps.Size(71, 71),
-                origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(17, 34),
-                scaledSize: new google.maps.Size(25, 25),
-            };
             new google.maps.Marker({
                 map,
-                icon: image,
                 title: place.name,
                 position: place.geometry.location,
             });
@@ -73,38 +65,47 @@ function addPlaces(places, map, latitude, longitude) {
             li.textContent = place.name;
             placesList.appendChild(li);
             li.addEventListener("click", () => {
-                map.setCenter(place.geometry.location);
                 let endpoint = place.vicinity;
                 directionsRenderer.setMap(map);
                 calculateAndDisplayRoute(directionsService, directionsRenderer, latitude, longitude, endpoint);
+                service = new google.maps.places.PlacesService(map);
+                let request = {
+                    placeId: place.place_id,
+                    fields: ['name', 'formatted_address', 'photos', 'opening_hours', 'website']
+                };
+                service.getDetails(request, (place, status) => {
+                    if (status === google.maps.places.PlacesServiceStatus.OK) {
+                        console.log(place)
+                    }
+                });
             });
         }
     }
 }
 
-function geoWeather(latitude, longitude) {
-    geoWeatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + Math.floor(latitude) + "&lon=" + Math.floor(longitude) + "&appid=2c96103d1d31364a22258e5a870054a8";
-    // const locationWeather = document.getElementById("locationWeather");
-    $.ajax({
-        url: geoWeatherURL,
-        method: "GET"
-    }).then(function (response){
-        console.log(response);
-        // var nameOfCity = "Today's Weather in " + cityToSearch;
-        // var temp = Math.round(((response.main.temp - 273.15) * 9 / 5 + 32));
-        // var tempNow = "Temperature: " + temp + String.fromCharCode(176) + "F";
-        // var humidityNow = "Humidity: " + response.main.humidity;
-        // var windSpeedNow = "Wind Speed: " + response.wind.speed;
-        // var iconNow = "src=http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
-        // var todayWeather = `<div class="weatherNow">
-        //         <h2 class="nameOfCity">${nameOfCity}</h2>
-        //         <p class="tempNow">${tempNow}</p>
-        //         <p class="humidityNow">${humidityNow}</p>
-        //         <p class="windSpeedNow">${windSpeedNow}</p>
-        //         <img class="iconNow"${iconNow}></div>`;
-        // locationWeather.appendChild(todayWeather);
-    })
-}
+// function geoWeather(latitude, longitude) {
+//     geoWeatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + Math.floor(latitude) + "&lon=" + Math.floor(longitude) + "&appid=2c96103d1d31364a22258e5a870054a8";
+//     // const locationWeather = document.getElementById("locationWeather");
+//     $.ajax({
+//         url: geoWeatherURL,
+//         method: "GET"
+//     }).then(function (response){
+//         console.log(response);
+//         // var nameOfCity = "Today's Weather in " + cityToSearch;
+//         // var temp = Math.round(((response.main.temp - 273.15) * 9 / 5 + 32));
+//         // var tempNow = "Temperature: " + temp + String.fromCharCode(176) + "F";
+//         // var humidityNow = "Humidity: " + response.main.humidity;
+//         // var windSpeedNow = "Wind Speed: " + response.wind.speed;
+//         // var iconNow = "src=http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
+//         // var todayWeather = `<div class="weatherNow">
+//         //         <h2 class="nameOfCity">${nameOfCity}</h2>
+//         //         <p class="tempNow">${tempNow}</p>
+//         //         <p class="humidityNow">${humidityNow}</p>
+//         //         <p class="windSpeedNow">${windSpeedNow}</p>
+//         //         <img class="iconNow"${iconNow}></div>`;
+//         // locationWeather.appendChild(todayWeather);
+//     })
+// }
 
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer, latitude, longitude, endpoint) {
