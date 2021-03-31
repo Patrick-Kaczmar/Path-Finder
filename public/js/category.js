@@ -55,16 +55,8 @@ function addPlaces(places, map, latitude, longitude) {
 
     for (const place of places) {
         if (place.geometry && place.geometry.location) {
-            const image = {
-                url: place.icon,
-                size: new google.maps.Size(71, 71),
-                origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(17, 34),
-                scaledSize: new google.maps.Size(25, 25),
-            };
             new google.maps.Marker({
                 map,
-                icon: image,
                 title: place.name,
                 position: place.geometry.location,
             });
@@ -72,14 +64,29 @@ function addPlaces(places, map, latitude, longitude) {
             li.textContent = place.name;
             placesList.appendChild(li);
             li.addEventListener("click", () => {
-                map.setCenter(place.geometry.location);
                 let endpoint = place.vicinity;
                 directionsRenderer.setMap(map);
                 calculateAndDisplayRoute(directionsService, directionsRenderer, latitude, longitude, endpoint);
+                service = new google.maps.places.PlacesService(map);
+                let request = {
+                    placeId: place.place_id,
+                    fields: ['name', 'formatted_address', 'photos', 'opening_hours', 'url', 'website']
+                };
+                service.getDetails(request, callback);
             });
         }
     }
 }
+
+function getDetails(request) {
+    console.log(request);
+}
+
+function callback(place, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      console.log(`you are viewing ${place.name}`)
+    }
+  }
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer, latitude, longitude, endpoint) {
     directionsService.route(

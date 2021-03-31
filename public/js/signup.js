@@ -104,7 +104,7 @@ function initMap() {
   var request = {
     location: pyrmont,
     radius: '500',
-    type: ['restaurants']
+    type: ['gyms']
   };
 
   service = new google.maps.places.PlacesService(map);
