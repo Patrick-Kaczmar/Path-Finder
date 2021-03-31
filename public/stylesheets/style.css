@@ -363,3 +363,31 @@ button:disabled {
   color: #c5d4f0;
   cursor: auto;
 }
+
+#resultName, #resultAddress {
+  text-align: center;
+  display: block;
+}
+
+#resultHours{
+  float: left;
+  height: 280px;
+  width: fit-content;
+  margin-left: 100px;
+}
+
+#gallery {
+  float: left;
+  width: 60%;
+  max-height: 280px;
+  margin-left: 150px;
+}
+
+#resultWeather {
+  display: inline-block;
+}
+
+#resultWebsite {
+  clear: left;
+  text-align: center;
+}
