@@ -325,16 +325,6 @@ form.login {
   height: 100%;
 }
 
-#results {
-  font-size: 1.5rem;
-  margin: 0 0 5px 0;
-  flex-grow: 0;
-}
-
-#potato {
-  height: 50%;
-}
-
 html, body {
   height: 100%;
   margin: 0;
@@ -383,4 +373,32 @@ button:disabled {
   background-color: #9fc1ee;
   color: #c5d4f0;
   cursor: auto;
+}
+
+#resultName, #resultAddress {
+  text-align: center;
+  display: block;
+}
+
+#resultHours{
+  float: left;
+  height: 280px;
+  width: fit-content;
+  margin-left: 100px;
+}
+
+#gallery {
+  float: left;
+  width: 60%;
+  max-height: 280px;
+  margin-left: 150px;
+}
+
+#resultWeather {
+  display: inline-block;
+}
+
+#resultWebsite {
+  clear: left;
+  text-align: center;
 }
