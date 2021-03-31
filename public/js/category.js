@@ -7,6 +7,7 @@ function getLocation() {
         let longitude = currentPosition.coords.longitude;
         result = [latitude, longitude]
         initMap(latitude, longitude);
+        geoWeather(latitude, longitude);
     });
 }
 
@@ -82,12 +83,40 @@ function addPlaces(places, map, latitude, longitude) {
     }
 }
 
+<<<<<<< HEAD
 function callback(place, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
         console.log(`you are viewing ${place.name}`)
     }
 }
 
+=======
+function geoWeather(latitude, longitude) {
+    geoWeatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + Math.floor(latitude) + "&lon=" + Math.floor(longitude) + "&appid=2c96103d1d31364a22258e5a870054a8";
+    // const locationWeather = document.getElementById("locationWeather");
+    $.ajax({
+        url: geoWeatherURL,
+        method: "GET"
+    }).then(function (response){
+        console.log(response);
+        // var nameOfCity = "Today's Weather in " + cityToSearch;
+        // var temp = Math.round(((response.main.temp - 273.15) * 9 / 5 + 32));
+        // var tempNow = "Temperature: " + temp + String.fromCharCode(176) + "F";
+        // var humidityNow = "Humidity: " + response.main.humidity;
+        // var windSpeedNow = "Wind Speed: " + response.wind.speed;
+        // var iconNow = "src=http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
+        // var todayWeather = `<div class="weatherNow">
+        //         <h2 class="nameOfCity">${nameOfCity}</h2>
+        //         <p class="tempNow">${tempNow}</p>
+        //         <p class="humidityNow">${humidityNow}</p>
+        //         <p class="windSpeedNow">${windSpeedNow}</p>
+        //         <img class="iconNow"${iconNow}></div>`;
+        // locationWeather.appendChild(todayWeather);
+    })
+}
+
+
+>>>>>>> origin
 function calculateAndDisplayRoute(directionsService, directionsRenderer, latitude, longitude, endpoint) {
     directionsService.route(
         {
@@ -108,3 +137,4 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer, latitud
         }
     );
 }
+

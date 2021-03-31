@@ -35,35 +35,12 @@ $(document).ready(function () {
       })
       .catch(handleLoginErr)
   };
-  // googlePlacesAPI();
-  // function googlePlacesAPI(){
-  //   var cityname="New Brunswick"
-  //   $.ajax({
-  //     type: 'GET',
-  //     url: 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?&query=restaurants%2Bin%2BNew%20Brunswick&key=AIzaSyCLn8eFzZs2IxHKregIE05dcdyx7_KfSDI&sensor=false',
-  //     headers: {
-  //       "Access-Control-Allow-Origin":"*"
-  //     },
-  //     dataType: 'jsonp',
-  //     // data: {
-  //     //   'query': "restaurants+in+" + cityname,
-  //     //   'key': "AIzaSyCLn8eFzZs2IxHKregIE05dcdyx7_KfSDI",
-  //     //   'sensor': "false"
-  //     // },
-  //     success: function (response) {
-  //       console.log(response);
-  //     }
-  //   });
-  // }
-
-
-
   function handleLoginErr(err) {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
-
 });
+<<<<<<< HEAD
 
 var map;
 var service;
@@ -130,3 +107,5 @@ function createMarker(place) {
     infowindow.open(map);
   });
 }
+=======
+>>>>>>> origin
