@@ -44,7 +44,7 @@ module.exports = function(app) {
   });
  
   // route to display gym handlebars when icon clicked
-  app.get("/gym", function(req, res) {
+  app.get("/views/index-gym.handlebars", function(req, res) {
     res.render("gym", { activityId: "gym" });
   });
   
