@@ -1,49 +1,85 @@
 <script>
   var activityId = "{{ activityId }}";
 </script>
-<nav class="navbar navbar-default">
-  <div class="container-fluid members-nav">
-    <div class="navbar-header">
-      <a id="logout" class="nav-item" href="/logout">
-        Logout
-      </a>
-      <a href="/members">
-        <img src="/assets/arrow-icon-white.png" class="arrow-icon">
-      </a>
+<nav class="navbar navbar-expand-lg members-nav activity-nav">
+  <div class="container-fluid nav-flex">
+    <a class="navbar-brand" href="/members">
+      Pathfinder
+      <img src="/assets/arrow-icon-white.png" class="d-inline-block align-text-top arrow-icon">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/members">Home</a>
+        </li>
+        <li id="activity-li" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/members/category" id="navbarDropdown" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Activities
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="/views/index-restaurant.handlebars" id="restaurant">Restaurants</a></li>
+            <li><a class="dropdown-item" href="/views/index-golf.handlebars" id="golf">Golf Courses</a></li>
+            <li><a class="dropdown-item" href="/views/index-gym.handlebars" id="gym">Gyms</a></li>
+            <li><a class="dropdown-item" href="/views/index-tennis.handlebars" id="tennis">Tennis Courts</a>
+            </li>
+            <li><a class="dropdown-item" href="/views/index-waterpark.handlebars" id="waterpark">Water
+                Parks</a></li>
+            <li><a class="dropdown-item" href="/views/index-zipline.handlebars" id="zipline">Zipline
+                Courses</a></li>
+          </ul>
+        </li>
+        <li id="logout-li" class="nav-item">
+          <a id="logout" class="nav-link" href="/logout">
+            Logout
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
-
-<div id="container">
+<div id="container" class="map-container">
   <div id="map"></div>
   <div id="sidebar">
-    <h2 id="results">Results</h2>
+    <h2 id="results">Results Near Me <img src="/assets/barbell.png" class="memberIcons activity-pg-icons"></h2>
     <ul id="places"></ul>
     <button id="more">Load more results</button>
   </div>
-  <div id="locationWeather"> 
+  <div id="locationWeather">
   </div>
 </div>
-
-<div id="contentBox">
-  <h1 id="resultName">Name</h1>
-  <h2 id="resultAddress">Address</h2>
-  <aside id="resultHours">
-    <p id="hoursText">
-      Opening hours
-    </p>
-  </aside>
-  <div id="gallery">
-    <figure id="photo1">photo1</figure>
-    <figure id="photo2">photo2</figure>
+<div class="content-wrapper">
+  <div id="contentBox">
+    <header class="resultHeader">
+      <h1 id="resultName">Name</h1>
+      <h3 id="resultAddress">Address</h3>
+    </header>
+    <main class="hours-gallery-weather-div">
+      <aside id="resultHours">
+        <p id="hoursText">
+          - Hours -
+        </p>
+      </aside>
+      <section id="gallery">
+        <figure id="photo1" class="image image-fluid">photo1</figure>
+        <figure id="photo2" class="image image-fluid">photo2</figure>
+      </section>
+      <aside id="resultWeather">Weather</aside>
+    </main>
+    <footer>
+      <h3 id="resultWebsite">website</h3>
+    </footer>
   </div>
-  <aside id="resultWeather">Weather</aside>
-  <h3 id="resultWebsite">website</h3>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="/js/category.js"></script>
 
 {{!-- script below should be a variable --}}
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&libraries=places&callback=getLocation" async></script>
-
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&libraries=places&callback=getLocation"
+  async></script>
