@@ -98,8 +98,8 @@ function geoWeather(latitude, longitude) {
     $.ajax({
         url: geoWeatherURL,
         method: "GET"
-    }).then(function (response){
-        
+    }).then(function (response) {
+
         let resultWeather = $("#resultWeather");
         console.log(response);
         var temp = Math.round(((response.main.temp - 273.15) * 9 / 5 + 32));
@@ -107,20 +107,22 @@ function geoWeather(latitude, longitude) {
         var humidityNow = "Humidity: " + response.main.humidity;
         var windSpeedNow = "Wind Speed: " + response.wind.speed;
         var iconNow = "src=http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
-        var todayWeather = `<div class="weatherNow">
-                <p class="tempNow">${tempNow}</p>
-                <p class="humidityNow">${humidityNow}</p>
-                <p class="windSpeedNow">${windSpeedNow}</p>
-                <img class="iconNow"${iconNow}></div>`;
+        var todayWeather = `
+                <div class="weatherNow">
+                    <h3 class="weatherHeader">Current Weather <img class="iconNow"${iconNow}></h3>
+                    <p class="tempNow">${tempNow}</p>
+                    <p class="humidityNow">${humidityNow}</p>
+                    <p class="windSpeedNow">${windSpeedNow}</p>
+                </div>
+                `;
         resultWeather.html(todayWeather);
-        
     })
 }
 
 function resultInfo(place) {
     resultName.textContent = place.name;
     resultAddress.textContent = place.formatted_address;
-    $(hoursText).html(`Opening hours - <br><br>
+    $(hoursText).html(`- Hours - <br>
     ${place.opening_hours.weekday_text[0]}<br>
     ${place.opening_hours.weekday_text[1]}<br>
     ${place.opening_hours.weekday_text[2]}<br>
@@ -131,7 +133,7 @@ function resultInfo(place) {
     $(photo1).html(`<img class="resize" src="${place.photos[0].getUrl()}">`);
     $(photo2).html(`<img class="resize" src="${place.photos[1].getUrl()}">`);
     resultWeather = "???"
-    $(resultWebsite).html(`Check out the website for ${place.name} <a href="${place.website}">here</a>`);
+    $(resultWebsite).html(`Check out the website for ${place.name}  <a href="${place.website}"> here</a>`);
 }
 
 
