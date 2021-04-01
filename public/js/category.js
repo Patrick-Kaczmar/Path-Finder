@@ -102,7 +102,7 @@ function geoWeather(latitude, longitude) {
         method: "GET"
     }).then(function (response){
         
-        let resultWeather = $("#resultWeather");
+        let resultWeather = $("#weather");
         console.log(response);
         var temp = Math.round(((response.main.temp - 273.15) * 9 / 5 + 32));
         var tempNow = "Temperature: " + temp + String.fromCharCode(176) + "F";
