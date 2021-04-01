@@ -396,15 +396,15 @@ button:disabled {
 #resultHours{
   float: left;
   height: 280px;
-  width: fit-content;
-  margin-left: 100px;
+  width: 20%;
+  margin-left: 50px;
 }
 
 #gallery {
   float: left;
-  width: 60%;
+  width: 50%;
   max-height: 280px;
-  margin-left: 150px;
+  margin-left: 50px;
 }
 
 #resultWeather {
@@ -414,4 +414,14 @@ button:disabled {
 #resultWebsite {
   clear: left;
   text-align: center;
+}
+
+#photo1 {
+  float: left;
+  margin-right: 50px;
+}
+
+.resize {
+  height: 280px;
+  width: 300px;
 }
