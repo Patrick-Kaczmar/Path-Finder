@@ -20,8 +20,6 @@ function getLocation() {
     });
 }
 
-
-
 function initMap(latitude, longitude) {
 
     map = new google.maps.Map(document.getElementById("map"), {
