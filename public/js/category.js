@@ -24,6 +24,8 @@ function getLocation() {
 
 function initMap(latitude, longitude) {
 
+    let searchTerm = $("#container").data("id")
+
     map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: latitude, lng: longitude },
         zoom: 11,
@@ -41,7 +43,7 @@ function initMap(latitude, longitude) {
     };
 
     service.nearbySearch(
-        { location: { lat: latitude, lng: longitude }, radius: 5000, type: "gym" },
+        { location: { lat: latitude, lng: longitude }, radius: 5000, type: searchTerm },
         (results, status, pagination) => {
             if (status !== "OK" || !results) return;
             console.log(results)
