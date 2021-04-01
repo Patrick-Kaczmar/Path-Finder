@@ -5,11 +5,14 @@
   <title>Passport Authentication</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  {{!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"> --}}
+  {{!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> --}}
+  {{!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"> --}}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
   <link href="stylesheets/style.css" rel="stylesheet">
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-  
 </head>
 
 <body>
@@ -17,11 +20,7 @@
     <div class="container-fluid nav-flex">
       <a class="navbar-brand" href="/members">
         Pathfinder
-      </a>
-      <a href="/members">
-        <figure>
-          <img src="assets/arrow-icon-white.png" class="arrow-icon">
-        </figure>
+        <img src="assets/arrow-icon-white.png" class="d-inline-block align-text-top arrow-icon">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -31,18 +30,18 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/members">Home</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/members/category" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+          <li id="activity-li" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="/members" id="dropdownMenuLink" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
               Activities
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/views/restaurant.handlebars" id="restaurant">Restaurants</a></li>
-              <li><a class="dropdown-item" href="/views/golf.handlebars" id="golf">Golf Courses</a></li>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" href="/views/index-restaurant.handlebars" id="restaurant">Restaurants</a></li>
+              <li><a class="dropdown-item" href="/views/index-golf.handlebars" id="golf">Golf Courses</a></li>
               <li><a class="dropdown-item" href="/views/index-gym.handlebars" id="gym">Gyms</a></li>
-              <li><a class="dropdown-item" href="/views/tennis.handlebars" id="tennis">Tennis Courts</a></li>
-              <li><a class="dropdown-item" href="/views/waterpark.handlebars" id="waterpark">Water Parks</a></li>
-              <li><a class="dropdown-item" href="/views/zipline.handlebars" id="zipline">Zipline Courses</a></li>
+              <li><a class="dropdown-item" href="/views/index-tennis.handlebars" id="tennis">Tennis Courts</a></li>
+              <li><a class="dropdown-item" href="/views/index-waterpark.handlebars" id="waterpark">Water Parks</a></li>
+              <li><a class="dropdown-item" href="/views/index-zipline.handlebars" id="zipline">Zipline Courses</a></li>
             </ul>
           </li>
           <li id="logout-li" class="nav-item">
@@ -56,21 +55,24 @@
   </nav>
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
+      <div class="col">
         <h2 id="welcome-h2">
           <center>Welcome to <span id="welcome">Pathfinder </span><span class="member-name"></span></center>
         </h2>
+        <h3 id="explore">
+          <center>Explore Activities Near You</center>
+        </h3>
       </div>
     </div>
   </div>
   <div class="figure-wrapper">
-    <a class="activity-link" id="restaurant" href="/views/restaurant.handlebars">
+    <a class="activity-link" id="restaurant" href="/views/index-restaurant.handlebars">
       <figure id="foodFig" class="animate__animated animate__bounceInLeft">
         <img class="memberIcons" src="./assets/food-icon.png" alt="food icon">
         <figcaption class="figArea"><span class="iconCaption">Restaurants</span></figcaption>
       </figure>
     </a>
-    <a class="activity-link" id="golf" href="/views/golf.handlebars">
+    <a class="activity-link" id="golf" href="/views/index-golf.handlebars">
       <figure id="golfFig" class="animate__animated animate__bounceInLeft">
         <img class="memberIcons" src="./assets/golf-icon.png" alt="golf icon">
         <figcaption class="figArea"><span class="iconCaption">Golf Courses</span></figcaption>
@@ -82,19 +84,19 @@
         <figcaption class="figArea"><span class="iconCaption">Gyms</span></figcaption>
       </figure>
     </a>
-    <a class="activity-link" id="tennis" href="/views/tennis.handlebars" >
+    <a class="activity-link" id="tennis" href="/views/index-tennis.handlebars">
       <figure id="tennisFig" class="animate__animated animate__bounceInLeft">
         <img class="memberIcons" src="./assets/tennis-icon.png" alt="tennis icon">
         <figcaption class="figArea"><span class="iconCaption">Tennis Courts</span></figcaption>
       </figure>
     </a>
-    <a class="activity-link" id="waterpark" href="/views/waterpark.handlebars">
+    <a class="activity-link" id="waterpark" href="/views/index-waterpark.handlebars">
       <figure id="waterparkFig" class="animate__animated animate__bounceInLeft">
         <img class="memberIcons" src="./assets/waterpark-image.png" alt="waterpark icon">
         <figcaption class="figArea"><span class="iconCaption">Water Parks</span></figcaption>
       </figure>
     </a>
-    <a class="activity-link" href="/views/zipline.handlebars" id="zipline">
+    <a class="activity-link" href="/views/index-zipline.handlebars" id="zipline">
       <figure id="ziplineFig" class="animate__animated animate__bounceInLeft">
         <img class="memberIcons" src="./assets/zipline-icon.png" alt="zipline icon">
         <figcaption class="figArea"><span class="iconCaption">Zipline Courses</span></figcaption>

@@ -1,23 +1,23 @@
 <script>
   var activityId = "{{ activityId }}";
-  </script>
+</script>
 <nav class="navbar navbar-default">
   <div class="container-fluid members-nav">
     <div class="navbar-header">
-      <a id="logout" class="navbar-brand" href="/logout">
+      <a id="logout" class="nav-item" href="/logout">
         Logout
       </a>
+      <a href="/members">
+        <img src="/assets/arrow-icon-white.png" class="arrow-icon">
+      </a>
     </div>
-    <figure>
-      <img src="/assets/arrow-icon-white.png" class="arrow-icon">
-    </figure>
   </div>
 </nav>
 
 <div id="container">
   <div id="map"></div>
   <div id="sidebar">
-    <h2>Results</h2>
+    <h2 id="results">Results</h2>
     <ul id="places"></ul>
     <button id="more">Load more results</button>
   </div>
