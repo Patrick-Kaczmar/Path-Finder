@@ -1,7 +1,7 @@
 <script>
   var activityId = "{{ activityId }}";
 </script>
-<nav class="navbar navbar-expand-lg members-nav">
+<nav class="navbar navbar-expand-lg members-nav activity-nav">
   <div class="container-fluid nav-flex">
     <a class="navbar-brand" href="/members">
       Pathfinder
@@ -52,26 +52,28 @@
   <div id="locationWeather">
   </div>
 </div>
-<div id="contentBox">
-  <header class="resultHeader">
-    <h1 id="resultName">Name</h1>
-    <h3 id="resultAddress">Address</h3>
-  </header>
-  <main class="hours-gallery-weather-div">
-    <aside id="resultHours">
-      <p id="hoursText">
-        - Hours -
-      </p>
-    </aside>
-    <section id="gallery">
-      <figure id="photo1" class="image image-fluid">photo1</figure>
-      <figure id="photo2" class="image image-fluid">photo2</figure>
-    </section>
-    <aside id="resultWeather">Weather</aside>
-  </main>
-  <footer>
-    <h3 id="resultWebsite">website</h3>
-  </footer>
+<div class="content-wrapper">
+  <div id="contentBox">
+    <header class="resultHeader">
+      <h1 id="resultName">Name</h1>
+      <h3 id="resultAddress">Address</h3>
+    </header>
+    <main class="hours-gallery-weather-div">
+      <aside id="resultHours">
+        <p id="hoursText">
+          - Hours -
+        </p>
+      </aside>
+      <section id="gallery">
+        <figure id="photo1" class="image image-fluid">photo1</figure>
+        <figure id="photo2" class="image image-fluid">photo2</figure>
+      </section>
+      <aside id="resultWeather">Weather</aside>
+    </main>
+    <footer>
+      <h3 id="resultWebsite">website</h3>
+    </footer>
+  </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
