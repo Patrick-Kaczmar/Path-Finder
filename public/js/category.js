@@ -1,5 +1,14 @@
 let map;
 let service;
+let resultName = document.getElementById("resultName")
+let resultAddress = document.getElementById("resultAddress")
+let resultHours = document.getElementById("resultHours")
+let hoursText = document.getElementById("hoursText")
+let gallery = document.getElementById("gallery")
+let photo1 = document.getElementById("photo1")
+let photo2 = document.getElementById("photo2")
+let resultWeather = document.getElementById("resultWeather")
+let resultWebsite = document.getElementById("resultWebsite")
 
 function getLocation() {
     window.navigator.geolocation.getCurrentPosition(currentPosition => {
@@ -76,12 +85,14 @@ function addPlaces(places, map, latitude, longitude) {
                 service.getDetails(request, (place, status) => {
                     if (status === google.maps.places.PlacesServiceStatus.OK) {
                         console.log(place)
+                        resultInfo(place)
                     }
                 });
             });
         }
     }
 }
+
 
 function geoWeather(latitude, longitude) {
     geoWeatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + Math.floor(latitude) + "&lon=" + Math.floor(longitude) + "&appid=2c96103d1d31364a22258e5a870054a8";
@@ -107,6 +118,25 @@ function geoWeather(latitude, longitude) {
         
     })
 }
+
+function resultInfo(place) {
+    resultName.textContent = place.name;
+    resultAddress.textContent = place.formatted_address;
+    $(hoursText).html(`Opening hours - <br><br>
+    ${place.opening_hours.weekday_text[0]}<br>
+    ${place.opening_hours.weekday_text[1]}<br>
+    ${place.opening_hours.weekday_text[2]}<br>
+    ${place.opening_hours.weekday_text[3]}<br>
+    ${place.opening_hours.weekday_text[4]}<br>
+    ${place.opening_hours.weekday_text[5]}<br>
+    ${place.opening_hours.weekday_text[6]}<br>`);
+    $(photo1).html(`<img class="resize" src="${place.photos[0].getUrl()}">`);
+    $(photo2).html(`<img class="resize" src="${place.photos[1].getUrl()}">`);
+    resultWeather = "???"
+    $(resultWebsite).html(`Check out the website for ${place.name} <a href="${place.website}">here</a>`);
+}
+
+
 
 
 function calculateAndDisplayRoute(directionsService, directionsRenderer, latitude, longitude, endpoint) {

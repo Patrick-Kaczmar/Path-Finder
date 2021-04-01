@@ -33,13 +33,17 @@ module.exports = function(app) {
     res.render("members");
   });
   
+  app.get("/category", function(req, res) {
+    res.render("category");
+  });
+
   // route to display restaurant handlebars when icon clicked
-  app.get("/restaurant", function(req, res) {
+  app.get("/views/index-restaurant.handlebars", function(req, res) {
     res.render("restaurant", { activityId: "restaurant" });
   });
 
   // route to display golf handlebars when icon clicked
-  app.get("/golf", function(req, res) {
+  app.get("/views/index-golf.handlebars", function(req, res) {
     res.render("golf", { activityId: "golf" });
   });
  
@@ -49,17 +53,17 @@ module.exports = function(app) {
   });
   
   // tennis route
-  app.get("/tennis", function(req, res) {
+  app.get("/views/index-tennis.handlebars", function(req, res) {
     res.render("tennis", { activityId: "tennis" });
   });
 
   // route to display waterpark handlebars when icon clicked
-  app.get("/waterpark", function(req, res) {
+  app.get("/views/index-waterpark.handlebars", function(req, res) {
     res.render("waterpark", { activityId: "waterpark" });
   });
 
   // route to display zipline handlebars when icon clicked
-  app.get("/zipline", function(req, res) {
+  app.get("/views/index-zipline.handlebars", function(req, res) {
     res.render("zipline", { activityId: "zipline" });
   });
 };
