@@ -481,7 +481,11 @@ button:disabled {
 
 #photo1 {
   margin: 0 auto;
-  /* width: 100%; */
+  /* width: 100%; 
+  clear: left;
+  text-align: center; 
+  float: left;
+  margin-right: 50px; */
 }
 
 .resize {
