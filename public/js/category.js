@@ -23,6 +23,7 @@ function getLocation() {
 function initMap(latitude, longitude) {
 
     let searchTerm = $("#container").data("id")
+    console.log(searchTerm)
 
     map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: latitude, lng: longitude },
