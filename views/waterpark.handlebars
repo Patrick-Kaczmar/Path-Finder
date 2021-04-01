@@ -1,6 +1,3 @@
-<script>
-    var activityId = "{{ activityId }}";
-</script>
 <nav class="navbar navbar-expand-lg members-nav">
     <div class="container-fluid nav-flex">
         <a class="navbar-brand" href="/members">
@@ -22,16 +19,12 @@
                         Activities
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="/views/index-restaurant.handlebars"
-                                id="restaurant">Restaurants</a></li>
+                        <li><a class="dropdown-item" href="/views/index-restaurant.handlebars" id="restaurant">Restaurants</a></li>
                         <li><a class="dropdown-item" href="/views/index-golf.handlebars" id="golf">Golf Courses</a></li>
                         <li><a class="dropdown-item" href="/views/index-gym.handlebars" id="gym">Gyms</a></li>
-                        <li><a class="dropdown-item" href="/views/index-tennis.handlebars" id="tennis">Tennis Courts</a>
-                        </li>
-                        <li><a class="dropdown-item" href="/views/index-waterpark.handlebars" id="waterpark">Water
-                                Parks</a></li>
-                        <li><a class="dropdown-item" href="/views/index-zipline.handlebars" id="zipline">Zipline
-                                Courses</a></li>
+                        <li><a class="dropdown-item" href="/views/index-tennis.handlebars" id="tennis">Tennis Courts</a></li>
+                        <li><a class="dropdown-item" href="/views/index-waterpark.handlebars" id="waterpark">Water Parks</a></li>
+                        <li><a class="dropdown-item" href="/views/index-zipline.handlebars" id="zipline">Zipline Courses</a></li>
                     </ul>
                 </li>
                 <li id="logout-li" class="nav-item">
@@ -43,7 +36,13 @@
         </div>
     </div>
 </nav>
-<main>
+
     <h1 class="near-me-h1">Waterparks Near Me<img src="/assets/waterpark-icon.png"
             class="memberIcons activity-pg-icons"></h1>
-</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/category.js"></script>
+
+{{!-- script below should be a variable --}}
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&libraries=places&callback=getLocation"
+  async></script>
