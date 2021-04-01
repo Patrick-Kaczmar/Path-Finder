@@ -13,7 +13,6 @@ module.exports = function(app) {
       // res.redirect("/members");
       res.render("members");
     }
-    // res.sendFile(path.join(__dirname, "../public/signup.html"));
     res.render("signup");
   });
 
@@ -22,7 +21,6 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    // res.sendFile(path.join(__dirname, "../public/login.html"));
     res.render("login");
   });
 
@@ -31,10 +29,6 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, function(req, res) {
     // res.sendFile(path.join(__dirname, "../public/members.html"));
     res.render("members");
-  });
-  
-  app.get("/category", function(req, res) {
-    res.render("category");
   });
 
   // route to display restaurant handlebars when icon clicked

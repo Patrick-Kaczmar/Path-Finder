@@ -3,10 +3,10 @@
 </script>
 <nav class="navbar navbar-expand-lg members-nav">
     <div class="container-fluid nav-flex">
-      <a class="navbar-brand" href="/members">
-        Pathfinder
-        <img src="/assets/arrow-icon-white.png" class="d-inline-block align-text-top arrow-icon">
-      </a>
+        <a class="navbar-brand" href="/members">
+            Pathfinder
+            <img src="/assets/arrow-icon-white.png" class="d-inline-block align-text-top arrow-icon">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -21,13 +21,17 @@
                         data-bs-toggle="dropdown" aria-expanded="false">
                         Activities
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Restaurants</a></li>
-                        <li><a class="dropdown-item" href="#">Golf Courses</a></li>
-                        <li><a class="dropdown-item" href="#">Gyms</a></li>
-                        <li><a class="dropdown-item" href="#">Tennis Courts</a></li>
-                        <li><a class="dropdown-item" href="#">Water Parks</a></li>
-                        <li><a class="dropdown-item" href="#">Zipline Courses</a></li>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="/views/index-restaurant.handlebars"
+                                id="restaurant">Restaurants</a></li>
+                        <li><a class="dropdown-item" href="/views/index-golf.handlebars" id="golf">Golf Courses</a></li>
+                        <li><a class="dropdown-item" href="/views/index-gym.handlebars" id="gym">Gyms</a></li>
+                        <li><a class="dropdown-item" href="/views/index-tennis.handlebars" id="tennis">Tennis Courts</a>
+                        </li>
+                        <li><a class="dropdown-item" href="/views/index-waterpark.handlebars" id="waterpark">Water
+                                Parks</a></li>
+                        <li><a class="dropdown-item" href="/views/index-zipline.handlebars" id="zipline">Zipline
+                                Courses</a></li>
                     </ul>
                 </li>
                 <li id="logout-li" class="nav-item">
@@ -40,6 +44,6 @@
     </div>
 </nav>
 <main>
-    <h1 class="near-me-h1">Waterparks Near Me<img src="/assets/waterpark-image.png"
+    <h1 class="near-me-h1">Waterparks Near Me<img src="/assets/waterpark-icon.png"
             class="memberIcons activity-pg-icons"></h1>
 </main>
