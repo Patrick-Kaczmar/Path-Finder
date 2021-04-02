@@ -37,45 +37,54 @@
     </div>
 </nav>
 
-    <div data-id="park" id="container" class="map-container">
-        <div id="map"></div>
-        <div id="sidebar">
-            <h1 class="near-me-h1">Parks Near Me<img src="/assets/park.png" class="memberIcons activity-pg-icons"></h1>
-            <ul id="places"></ul>
-            <button id="more">Load more results</button>
-        </div>
-        <div id="locationWeather">
-        </div>
+<div data-id="park" id="container" class="map-container">
+    <div id="map"></div>
+    <div id="sidebar">
+        <h1 class="near-me-h1">Parks Near Me<img src="/assets/park.png" class="memberIcons activity-pg-icons"></h1>
+        <ul id="places"></ul>
+        <button id="more">Load more results</button>
     </div>
-    <div class="content-wrapper">
-        <div id="contentBox">
-            <header class="resultHeader">
-                <h1 id="resultName">Name</h1>
-                <h3 id="resultAddress">Address</h3>
-            </header>
-            <main class="hours-gallery-weather-div">
-                <aside id="resultHours">
-                    <p id="hoursText">
-                        - Hours -
-                    </p>
-                </aside>
-                <section id="gallery">
-                    <figure id="photo1" class="image image-fluid">photo1</figure>
-                    <figure id="photo2" class="image image-fluid">photo2</figure>
-                </section>
-                <aside id="resultWeather">Weather</aside>
-            </main>
-            <footer>
-                <h3 id="resultWebsite">website</h3>
-            </footer>
-        </div>
+    <div id="locationWeather">
     </div>
+</div>
+<div class="content-wrapper">
+    <div id="contentBox">
+        <header class="resultHeader">
+            <h1 id="resultName">Name</h1>
+            <h3 id="resultAddress">Address</h3>
+        </header>
+        <main class="hours-gallery-weather-div">
+            <aside id="resultHours">
+                <p id="hoursText">
+                    - Hours -
+                </p>
+            </aside>
+            <section id="gallery">
+                <figure id="photo1" class="image image-fluid">photo1</figure>
+                <figure id="photo2" class="image image-fluid">photo2</figure>
+            </section>
+            <aside id="resultWeather">Weather</aside>
+        </main>
+        <footer>
+            <h3 id="resultWebsite">website</h3>
+        </footer>
+    </div>
+</div>
+<div id="savedActivities">
+    <header id="savedHeader">
+        <h3>My Parks</h3>
+    </header>
+    <section>
+        <ul id="savedList">
+        </ul>
+    </section>
+</div>
 
-    
-    {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/category.js"></script> --}}
+{{!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/category.js"></script> --}}
 
-    {{!-- script below should be a variable --}}
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&libraries=places&callback=getLocation"
-        async></script>
+{{!-- script below should be a variable --}}
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&libraries=places&callback=getLocation"
+    async></script>
