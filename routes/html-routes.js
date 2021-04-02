@@ -33,59 +33,31 @@ module.exports = function(app) {
 
   // route to display restaurant handlebars when icon clicked
   app.get("/restaurant", function(req, res) {
-
     res.render("restaurant", { WEATHER_API: process.env.WEATHER_API });
   });
-
-  // route to display golf handlebars when icon clicked
-  app.get("/golf", function(req, res) {
-    res.render("golf", { WEATHER_API: process.env.WEATHER_API });
-
-    res.render("restaurant");
-  });
-
-  // route to display park handlebars when icon clicked
-  app.get("/park", function(req, res) {
-    res.render("park", { WEATHER_API: process.env.WEATHER_API });
-
-  });
- 
-  // route to display gym handlebars when icon clicked
-  app.get("/gym", function(req, res) {
-
-    res.render("gym", { WEATHER_API: process.env.WEATHER_API });
-  });
   
-  // tennis route
-  app.get("/tennis", function(req, res) {
-    res.render("tennis", { WEATHER_API: process.env.WEATHER_API });
-  });
-
-  // route to display waterpark handlebars when icon clicked
-  app.get("/waterpark", function(req, res) {
-    res.render("waterpark", { WEATHER_API: process.env.WEATHER_API });
-  });
-
-  // route to display zipline handlebars when icon clicked
-  app.get("/zipline", function(req, res) {
-    res.render("zipline", { WEATHER_API: process.env.WEATHER_API });
-
-    res.render("gym", { WEATHER_API: process.env.WEATHER_API });
-  });
-  
-  // hospital route
-  app.get("/hospital", function(req, res) {
-    res.render("hospital", { WEATHER_API: process.env.WEATHER_API });
-  });
-
   // route to display shoppingMall handlebars when icon clicked
   app.get("/shoppingMall", function(req, res) {
     res.render("shoppingMall", { WEATHER_API: process.env.WEATHER_API });
   });
 
+  // route to display gym handlebars when icon clicked
+  app.get("/gym", function(req, res) {
+    res.render("gym", { WEATHER_API: process.env.WEATHER_API });
+  });
+
+  // hospital route
+  app.get("/hospital", function(req, res) {
+    res.render("hospital", { WEATHER_API: process.env.WEATHER_API });
+  });
+
+  // route to display park handlebars when icon clicked
+  app.get("/park", function(req, res) {
+    res.render("park", { WEATHER_API: process.env.WEATHER_API });
+  });
+
   // route to display zoo handlebars when icon clicked
   app.get("/zoo", function(req, res) {
     res.render("zoo", { WEATHER_API: process.env.WEATHER_API });
-
   });
 };
