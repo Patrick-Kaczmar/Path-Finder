@@ -1,14 +1,17 @@
 let map;
 let service;
-let resultName = document.getElementById("resultName")
-let resultAddress = document.getElementById("resultAddress")
-let resultHours = document.getElementById("resultHours")
-let hoursText = document.getElementById("hoursText")
-let gallery = document.getElementById("gallery")
-let photo1 = document.getElementById("photo1")
-let photo2 = document.getElementById("photo2")
-let resultWeather = document.getElementById("resultWeather")
-let resultWebsite = document.getElementById("resultWebsite")
+let resultName = document.getElementById("resultName");
+let resultAddress = document.getElementById("resultAddress");
+let resultHours = document.getElementById("resultHours");
+let hoursText = document.getElementById("hoursText");
+let gallery = document.getElementById("gallery");
+let photo1 = document.getElementById("photo1");
+let photo2 = document.getElementById("photo2");
+let resultWeather = document.getElementById("resultWeather");
+let resultWebsite = document.getElementById("resultWebsite");
+
+
+
 
 function getLocation() {
     window.navigator.geolocation.getCurrentPosition(currentPosition => {
