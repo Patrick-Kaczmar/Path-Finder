@@ -33,31 +33,31 @@ module.exports = function(app) {
 
   // route to display restaurant handlebars when icon clicked
   app.get("/views/index-restaurant.handlebars", function(req, res) {
-    res.render("restaurant", { activityId: "restaurant" });
+    res.render("restaurant", { activityId: "restaurant", WEATHER_API: process.env.WEATHER_API});
   });
 
   // route to display golf handlebars when icon clicked
   app.get("/views/index-golf.handlebars", function(req, res) {
-    res.render("golf", { activityId: "golf" });
+    res.render("golf", { activityId: "golf", WEATHER_API: process.env.WEATHER_API });
   });
  
   // route to display gym handlebars when icon clicked
   app.get("/views/index-gym.handlebars", function(req, res) {
-    res.render("gym", { activityId: "gym" });
+    res.render("gym", { activityId: "gym", WEATHER_API: process.env.WEATHER_API });
   });
   
   // tennis route
   app.get("/views/index-tennis.handlebars", function(req, res) {
-    res.render("tennis", { activityId: "tennis" });
+    res.render("tennis", { activityId: "tennis", WEATHER_API: process.env.WEATHER_API });
   });
 
   // route to display waterpark handlebars when icon clicked
   app.get("/views/index-waterpark.handlebars", function(req, res) {
-    res.render("waterpark", { activityId: "waterpark" });
+    res.render("waterpark", { activityId: "waterpark", WEATHER_API: process.env.WEATHER_API });
   });
 
   // route to display zipline handlebars when icon clicked
   app.get("/views/index-zipline.handlebars", function(req, res) {
-    res.render("zipline", { activityId: "zipline" });
+    res.render("zipline", { activityId: "zipline", WEATHER_API: process.env.WEATHER_API });
   });
 };
