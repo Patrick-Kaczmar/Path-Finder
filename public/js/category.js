@@ -174,9 +174,19 @@ function geoWeather(lat, long) {
 
 function resultInfo(place) {
     resultName.textContent = place.name;
-    resultAddress.textContent = place.formatted_address;
 
-    $(hoursText).html(`- Hours - <br>
+    if (!place.formatted_address) {
+        resultAddress.textContent = "Sorry, The address for this location could not be found.";
+    }
+    else {
+        resultAddress.textContent = place.formatted_address;
+    }
+
+    if(!place.opening_hours) {
+        $(hoursText).html(`This location does not<br> display its opening hours.`)
+    }
+    else {
+        $(hoursText).html(`- Hours - <br>
     ${place.opening_hours.weekday_text[0]}<br>
     ${place.opening_hours.weekday_text[1]}<br>
     ${place.opening_hours.weekday_text[2]}<br>
@@ -184,10 +194,21 @@ function resultInfo(place) {
     ${place.opening_hours.weekday_text[4]}<br>
     ${place.opening_hours.weekday_text[5]}<br>
     ${place.opening_hours.weekday_text[6]}<br>`);
-    $(photo1).html(`<img class="resize" src="${place.photos[0].getUrl()}">`);
-    $(photo2).html(`<img class="resize" src="${place.photos[1].getUrl()}">`);
-    resultWeather = "???"
-    $(resultWebsite).html(`Check out the website for ${place.name} <a href="${place.website}">here</a>`);
+    }
+
+    if (!place.photos) {
+        $(photo1).html(`<img class="resize" src="../assets/its_all_peter.png">`)
+    }
+    else {
+        $(photo1).html(`<img class="resize" src="${place.photos[0].getUrl()}" alt="Result image">`);
+    }
+    
+    if (!place.website) {
+        $(resultWebsite).html(`Sorry, this location does not have a website listed.`)
+    }
+    else {
+        $(resultWebsite).html(`Check out the website for ${place.name}&nbsp;&nbsp; <a href="${place.website}">here</a>`);
+    }
 }
 
 

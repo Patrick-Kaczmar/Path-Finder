@@ -45,7 +45,7 @@ module.exports = function(app) {
   app.get("/gym", function(req, res) {
     res.render("gym", { WEATHER_API: process.env.WEATHER_API });
   });
-
+  
   // hospital route
   app.get("/hospital", function(req, res) {
     res.render("hospital", { WEATHER_API: process.env.WEATHER_API });
