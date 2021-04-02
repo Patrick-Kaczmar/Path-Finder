@@ -33,31 +33,31 @@ module.exports = function(app) {
 
   // route to display restaurant handlebars when icon clicked
   app.get("/views/index-restaurant.handlebars", function(req, res) {
-    res.render("restaurant", { activityId: "restaurant" });
+    res.render("restaurant");
   });
 
-  // route to display golf handlebars when icon clicked
-  app.get("/views/index-golf.handlebars", function(req, res) {
-    res.render("golf", { activityId: "golf" });
+  // route to display park handlebars when icon clicked
+  app.get("/views/index-park.handlebars", function(req, res) {
+    res.render("park");
   });
  
   // route to display gym handlebars when icon clicked
   app.get("/views/index-gym.handlebars", function(req, res) {
-    res.render("gym", { activityId: "gym" });
+    res.render("gym");
   });
   
-  // tennis route
-  app.get("/views/index-tennis.handlebars", function(req, res) {
-    res.render("tennis", { activityId: "tennis" });
+  // hospital route
+  app.get("/views/index-hospital.handlebars", function(req, res) {
+    res.render("hospital");
   });
 
-  // route to display waterpark handlebars when icon clicked
-  app.get("/views/index-waterpark.handlebars", function(req, res) {
-    res.render("waterpark", { activityId: "waterpark" });
+  // route to display shoppingMall handlebars when icon clicked
+  app.get("/views/index-shoppingMall.handlebars", function(req, res) {
+    res.render("shoppingMall");
   });
 
-  // route to display zipline handlebars when icon clicked
-  app.get("/views/index-zipline.handlebars", function(req, res) {
-    res.render("zipline", { activityId: "zipline" });
+  // route to display zoo handlebars when icon clicked
+  app.get("/views/index-zoo.handlebars", function(req, res) {
+    res.render("zoo");
   });
 };

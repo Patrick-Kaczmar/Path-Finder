@@ -1,14 +1,17 @@
 let map;
 let service;
-let resultName = document.getElementById("resultName")
-let resultAddress = document.getElementById("resultAddress")
-let resultHours = document.getElementById("resultHours")
-let hoursText = document.getElementById("hoursText")
-let gallery = document.getElementById("gallery")
-let photo1 = document.getElementById("photo1")
-let photo2 = document.getElementById("photo2")
-let resultWeather = document.getElementById("resultWeather")
-let resultWebsite = document.getElementById("resultWebsite")
+let resultName = document.getElementById("resultName");
+let resultAddress = document.getElementById("resultAddress");
+let resultHours = document.getElementById("resultHours");
+let hoursText = document.getElementById("hoursText");
+let gallery = document.getElementById("gallery");
+let photo1 = document.getElementById("photo1");
+let photo2 = document.getElementById("photo2");
+let resultWeather = document.getElementById("resultWeather");
+let resultWebsite = document.getElementById("resultWebsite");
+
+
+
 
 function getLocation() {
     window.navigator.geolocation.getCurrentPosition(currentPosition => {
@@ -16,7 +19,6 @@ function getLocation() {
         let longitude = currentPosition.coords.longitude;
         result = [latitude, longitude]
         initMap(latitude, longitude);
-        geoWeather(latitude, longitude);
     });
 }
 
@@ -42,7 +44,7 @@ function initMap(latitude, longitude) {
     };
 
     service.nearbySearch(
-        { location: { lat: latitude, lng: longitude }, radius: 5000, type: searchTerm },
+        { location: { lat: latitude, lng: longitude }, radius: 16100, type: searchTerm },
         (results, status, pagination) => {
             if (status !== "OK" || !results) return;
             console.log(results)
@@ -75,6 +77,7 @@ function addPlaces(places, map, latitude, longitude) {
             li.textContent = place.name;
             placesList.appendChild(li);
             li.addEventListener("click", () => {
+                geoWeather(latitude, longitude);
                 let endpoint = place.vicinity;
                 directionsRenderer.setMap(map);
                 calculateAndDisplayRoute(directionsService, directionsRenderer, latitude, longitude, endpoint);
@@ -106,7 +109,7 @@ function geoWeather(latitude, longitude) {
 
     }).then(function (response){
         
-        let resultWeather = $("#weather");
+        let resultWeather = $("#resultWeather");
         console.log(response);
         var temp = Math.round(((response.main.temp - 273.15) * 9 / 5 + 32));
         var tempNow = "Temperature: " + temp + String.fromCharCode(176) + "F";
@@ -166,4 +169,3 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer, latitud
         }
     );
 }
-
