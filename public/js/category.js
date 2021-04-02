@@ -19,9 +19,10 @@ function getLocation() {
         let longitude = currentPosition.coords.longitude;
         result = [latitude, longitude]
         initMap(latitude, longitude);
-        addEventListener("click", () => {
-        geoWeather(latitude, longitude);
-        })
+        addPlaces(latitude, longitude);
+        // addEventListener("click", () => {
+        // geoWeather(latitude, longitude);
+        // })
     });
 }
 
@@ -84,7 +85,7 @@ function addPlaces(places, map, latitude, longitude) {
             li.append(btn);
             placesList.appendChild(li);
             li.addEventListener("click", () => {
-                // geoWeather(lat, long);
+                geoWeather(latitude, longitude);
                 let endpoint = place.vicinity;
                 directionsRenderer.setMap(map);
                 calculateAndDisplayRoute(directionsService, directionsRenderer, latitude, longitude, endpoint);
