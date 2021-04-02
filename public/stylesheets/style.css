@@ -2,7 +2,10 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
   color: #112B43;
   background: rgb(243, 243, 243);
   font-family: 'Montserrat', sans-serif;
@@ -14,7 +17,8 @@ h3,
 .signup-login-btn,
 .here,
 .navbar-brand,
-.nav-item {
+.nav-item,
+#welcome {
   font-variant: small-caps;
 }
 
@@ -30,7 +34,10 @@ p {
   font-size: 22px;
 }
 
-.near-me-h1,
+.near-me-h1 {
+  font-size: 28px;
+}
+
 .signup-login-h2 {
   font-size: 35px;
 }
@@ -63,17 +70,12 @@ form.login {
 .signup-login-background {
   margin: 0;
   height: 100%;
-  /* background-image: url('../assets/sun-cloud.png');
-  filter: grayscale(50%); */
-  /* background-image: url('../assets/wallhaven-28ekym.jpg'); */
   background-size: cover;
 }
 
 .signup-login-container {
-  /* border: 1px solid black; */
   margin: 50px auto;
   padding: 50px 0;
-  /* box-shadow: 2px 2px 15px 5px rgb(77, 77, 77); */
 }
 
 .signup-login-content {
@@ -179,8 +181,6 @@ form.login {
 .iconCaption {
   font-size: 30px;
   letter-spacing: 0.5px;
-  /* font-weight: bold; */
-  /* font-variant: small-caps; */
 }
 
 .figArea {
@@ -199,7 +199,6 @@ form.login {
 
 .activity-link {
   color: #1e3c72;
-  /* text-decoration: none; */
   transition: 0.25s ease-in-out;
 }
 
@@ -223,10 +222,6 @@ form.login {
 
 .activity-nav {
   box-shadow: none;
-}
-
-#welcome {
-  font-variant: small-caps;
 }
 
 #welcome-h2 {
@@ -304,7 +299,7 @@ form.login {
   width: 45px;
   height: 45px;
   margin: 10px;
-  box-shadow: 1px 1px 6px 2px rgb(77, 77, 77);
+  box-shadow: 1px 1px 10px 1px rgb(49, 49, 49);
 }
 
 #explore {
@@ -312,12 +307,28 @@ form.login {
   margin: 10px auto;
 }
 
-#activity-li {
-  width: 150px;
+.map-container {
+  width: 100%; 
+  display: flex;
+  flex-flow:row wrap;
+  /* display: grid;
+  grid-template-columns: 20% repeat(5); */
 }
 
-#near-me-h1 {
-  font-size: 25px;
+.content-wrapper {
+  height: 100%;
+  margin: 15px;
+  padding: 0;
+}
+
+#container {
+  height: 40%;
+  display: flex;
+  flex-flow: row wrap; 
+}
+
+#activity-li {
+  width: 150px;
 }
 
 #map {
@@ -326,33 +337,17 @@ form.login {
   height: 100%;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.content-wrapper {
-  height: auto;
-  margin: 15px;
-  padding: 0;
-}
-
-#container {
-  height: 40%;
-  display: flex;
-  flex-flow: row wrap;
-}
-
 #sidebar {
   flex-basis: 5rem;
   flex-grow: 1;
   padding: 1rem;
+  /* width: 40%; */
   max-width: 30rem;
   height: 100%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  /* flex-flow: column nowrap; */
 }
 
 /* was ul, using id for specificity */
@@ -364,18 +359,28 @@ html, body {
   flex-grow: 1;
 }
 
-/* li {
+li {
   background-color: #f1f1f1;
   padding: 10px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-size: 1.25rem;
+  /* font-size: 1.25rem; */
   cursor: pointer;
-} */
+}
 
 li:nth-child(odd) {
   background-color: #fcfcfc;
+}
+
+/* buttons to save results */
+.result-btn {
+  float: right;
+  background: #2a5298;
+  color: rgb(243, 243, 243);
+  border: 1px solid #1e3c72;
+  border-radius: 5px;
+  padding: 2px 8px;
 }
 /* was button, using id for specificity */
 #more {
@@ -407,7 +412,7 @@ button:disabled {
 }
 
 #contentBox {
-  height: auto;
+  height: 98%;
   width: 100%;
   /* margin: 15px; */
   /* padding: 10px; */

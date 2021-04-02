@@ -75,6 +75,10 @@ function addPlaces(places, map, latitude, longitude) {
             });
             const li = document.createElement("li");
             li.textContent = place.name;
+            const btn = document.createElement("button");
+            btn.textContent = "Save";
+            btn.classList.add('result-btn');
+            li.append(btn);
             placesList.appendChild(li);
             li.addEventListener("click", () => {
                 geoWeather(latitude, longitude);
