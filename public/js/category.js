@@ -9,7 +9,8 @@ let photo1 = document.getElementById("photo1");
 let photo2 = document.getElementById("photo2");
 let resultWeather = document.getElementById("resultWeather");
 let resultWebsite = document.getElementById("resultWebsite");
-
+let resultButtons = document.getElementsByClassName("result-btn");
+let savedList = document.getElementById("savedList");
 
 
 
@@ -19,6 +20,10 @@ function getLocation() {
         let longitude = currentPosition.coords.longitude;
         result = [latitude, longitude]
         initMap(latitude, longitude);
+        addPlaces(latitude, longitude);
+        // addEventListener("click", () => {
+        // geoWeather(latitude, longitude);
+        // })
     });
 }
 
@@ -75,9 +80,12 @@ function addPlaces(places, map, latitude, longitude) {
             });
             const li = document.createElement("li");
             li.textContent = place.name;
-            const btn = document.createElement("button");
+            const matches = place.name.match(/\b(\w)/g);
+            const saveId = matches.join('').toLowerCase();
+            let btn = document.createElement("button");
             btn.textContent = "Save";
             btn.classList.add('result-btn');
+            btn.setAttribute('id', saveId);
             li.append(btn);
             placesList.appendChild(li);
             li.addEventListener("click", () => {
@@ -97,14 +105,42 @@ function addPlaces(places, map, latitude, longitude) {
                     }
                 });
             });
+            
+            btn.addEventListener("click", (event) => {
+                // prevents results from re-rendering to results box
+                event.stopImmediatePropagation();
+                service = new google.maps.places.PlacesService(map);
+                // getting place name and website
+                let request = {
+                    placeId: place.place_id,
+                    fields: ['name', 'website']
+                };
+                // checking if place status is ok
+                service.getDetails(request, (place, status) => {
+                    if (status === google.maps.places.PlacesServiceStatus.OK) {
+                        saveResult(place);
+                    }
+                });
+            });  
         }
     }
 }
+// function to render result on page
+function saveResult(place) {
+    // console.log(place.name);
+    // console.log(place.website);
+    const saveUrl = document.createElement("a");
+    let website = place.website;
+    saveUrl.textContent = place.name;
+    saveUrl.setAttribute("href", website);
+    const saveLi = document.createElement("li");
+    saveLi.append(saveUrl);
+    savedList.append(saveLi);
+};
 
+function geoWeather(lat, long) {
 
-function geoWeather(latitude, longitude) {
-
-    geoWeatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + Math.floor(latitude) + "&lon=" + Math.floor(longitude) + "&appid=" + WEATHER_API;
+    geoWeatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + Math.floor(lat) + "&lon=" + Math.floor(long) + "&appid=" + WEATHER_API;
     // process.env.WEATHER_API;
 
     // var div=document.createElement('div');

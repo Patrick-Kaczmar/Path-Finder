@@ -19,12 +19,12 @@
                         Activities
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="/views/index-restaurant.handlebars" id="restaurant">Restaurants</a></li>
-                        <li><a class="dropdown-item" href="/views/index-shoppingMall.handlebars" id="shoppingMall">Shopping malls</a></li>
-                        <li><a class="dropdown-item" href="/views/index-gym.handlebars" id="gym">Gyms</a></li>
-                        <li><a class="dropdown-item" href="/views/index-park.handlebars" id="park">Parks</a></li>
-                        <li><a class="dropdown-item" href="/views/index-hospital.handlebars" id="hospital">Hospital</a></li>
-                        <li><a class="dropdown-item" href="/views/index-zoo.handlebars" id="zoo">Zoo's</a></li>
+                        <li><a class="dropdown-item" href="/restaurant" id="restaurant">Restaurants</a></li>
+                        <li><a class="dropdown-item" href="/shoppingMall" id="shoppingMall">Shopping malls</a></li>
+                        <li><a class="dropdown-item" href="/gym" id="gym">Gyms</a></li>
+                        <li><a class="dropdown-item" href="/park" id="park">Parks</a></li>
+                        <li><a class="dropdown-item" href="/hospital" id="hospital">Hospital</a></li>
+                        <li><a class="dropdown-item" href="/zoo" id="zoo">Zoo's</a></li>
                     </ul>
                 </li>
                 <li id="logout-li" class="nav-item">
@@ -37,15 +37,13 @@
     </div>
 </nav>
 
-    <div data-id="hospital" id="container" class="map-container">
-        <div id="map"></div>
-        <div id="sidebar">
-            <h1 class="near-me-h1">Results Near Me<img src="/assets/waterpark-icon.png" class="memberIcons activity-pg-icons"></h1>
-            <ul id="places"></ul>
-            <button id="more">Load more results</button>
-        </div>
-        <div id="locationWeather">
-        </div>
+<div data-id="hospital" id="container" class="map-container">
+    <div id="map"></div>
+    <div id="sidebar">
+        <h1 class="near-me-h1">Results Near Me<img src="/assets/hospital.png" class="memberIcons activity-pg-icons">
+        </h1>
+        <ul id="places"></ul>
+        <button id="more">Load more results</button>
     </div>
     <div class="content-wrapper">
         <div id="contentBox">
@@ -69,13 +67,23 @@
             </footer>
         </div>
     </div>
+</div>
+<div id="savedActivities">
+    <header id="savedHeader">
+        <h3>My Hospitals</h3>
+    </header>
+    <section>
+        <ul id="savedList">
+        </ul>
+    </section>
+</div>
 
-    
-    {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/category.js"></script> --}}
 
-    {{!-- script below should be a variable --}}
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&libraries=places&callback=getLocation"
-        async></script>
+{{!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/category.js"></script> --}}
 
+{{!-- script below should be a variable --}}
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&libraries=places&callback=getLocation"
+    async></script>
