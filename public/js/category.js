@@ -19,6 +19,9 @@ function getLocation() {
         let longitude = currentPosition.coords.longitude;
         result = [latitude, longitude]
         initMap(latitude, longitude);
+        addEventListener("click", () => {
+        geoWeather(latitude, longitude);
+        })
     });
 }
 
@@ -81,7 +84,7 @@ function addPlaces(places, map, latitude, longitude) {
             li.append(btn);
             placesList.appendChild(li);
             li.addEventListener("click", () => {
-                geoWeather(latitude, longitude);
+                // geoWeather(lat, long);
                 let endpoint = place.vicinity;
                 directionsRenderer.setMap(map);
                 calculateAndDisplayRoute(directionsService, directionsRenderer, latitude, longitude, endpoint);
@@ -102,9 +105,9 @@ function addPlaces(places, map, latitude, longitude) {
 }
 
 
-function geoWeather(latitude, longitude) {
+function geoWeather(lat, long) {
 
-    geoWeatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + Math.floor(latitude) + "&lon=" + Math.floor(longitude) + "&appid=" + WEATHER_API;
+    geoWeatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + Math.floor(lat) + "&lon=" + Math.floor(long) + "&appid=" + WEATHER_API;
     // process.env.WEATHER_API;
 
     // var div=document.createElement('div');
