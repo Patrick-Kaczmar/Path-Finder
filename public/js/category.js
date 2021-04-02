@@ -22,6 +22,9 @@ function getLocation() {
 
 function initMap(latitude, longitude) {
 
+    let searchTerm = $("#container").data("id")
+    console.log(searchTerm)
+
     map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: latitude, lng: longitude },
         zoom: 11,
@@ -39,7 +42,7 @@ function initMap(latitude, longitude) {
     };
 
     service.nearbySearch(
-        { location: { lat: latitude, lng: longitude }, radius: 5000, type: "gym" },
+        { location: { lat: latitude, lng: longitude }, radius: 5000, type: searchTerm },
         (results, status, pagination) => {
             if (status !== "OK" || !results) return;
             console.log(results)
@@ -103,7 +106,7 @@ function geoWeather(latitude, longitude) {
 
     }).then(function (response){
         
-        let resultWeather = $("#resultWeather");
+        let resultWeather = $("#weather");
         console.log(response);
         var temp = Math.round(((response.main.temp - 273.15) * 9 / 5 + 32));
         var tempNow = "Temperature: " + temp + String.fromCharCode(176) + "F";
