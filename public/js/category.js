@@ -75,9 +75,12 @@ function addPlaces(places, map, latitude, longitude) {
             });
             const li = document.createElement("li");
             li.textContent = place.name;
+            const matches = place.name.match(/\b(\w)/g);
+            const saveId = matches.join('').toLowerCase();
             const btn = document.createElement("button");
             btn.textContent = "Save";
             btn.classList.add('result-btn');
+            btn.setAttribute('id', saveId);
             li.append(btn);
             placesList.appendChild(li);
             li.addEventListener("click", () => {
