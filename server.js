@@ -35,4 +35,3 @@ db.sequelize.sync().then(function() {
   });
 });
 
-// AIzaSyD1MhO5OYPYZSRBuTM9yGR8LYGbiW_ZrfM api key
