@@ -61,6 +61,7 @@ form.login {
   border: none;
   border-bottom: 2px 0 solid rgb(47, 47, 47);
   border-radius: 0;
+  margin-bottom: 0;
 }
 
 .signup-login-arrow-icon {
@@ -71,11 +72,13 @@ form.login {
   margin: 0;
   height: 100%;
   background-size: cover;
+  background-image: url('../assets/wallhaven-28ekym.jpg');
+  filter: grayscale(25%);
 }
 
 .signup-login-container {
-  margin: 50px auto;
-  padding: 50px 0;
+  margin: 0 auto;
+  padding: 100px 0;
 }
 
 .signup-login-content {
