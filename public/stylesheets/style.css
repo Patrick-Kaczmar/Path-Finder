@@ -498,3 +498,17 @@ button:disabled {
   height: 280px;
   width: 300px;
 }
+
+#savedActivities {
+  margin: 2rem;
+}
+
+#savedHeader {
+  padding: 0 1rem;
+}
+
+#savedList {
+  max-width: 30rem;
+  height: 100%;
+  margin: 0;
+}
