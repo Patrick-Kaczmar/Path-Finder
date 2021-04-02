@@ -60,8 +60,24 @@ form.login {
   margin: 3px; 
 }
 
+.signup-login-background {
+  margin: 0;
+  height: 100%;
+  /* background-image: url('../assets/sun-cloud.png');
+  filter: grayscale(50%); */
+  background-size: cover;
+}
+
 .signup-login-container {
+  /* border: 1px solid black; */
   margin: 50px auto;
+  padding: 50px 0;
+  /* box-shadow: 2px 2px 15px 5px rgb(77, 77, 77); */
+}
+
+.signup-login-content {
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .signup-login-h1 {
@@ -91,7 +107,7 @@ form.login {
 .form-control:focus {
   color: rgb(235, 235, 235);
   border: 1px solid rgb(47, 47, 47);
-  box-shadow: 1px 1px 5px 1px #2a5298;
+  box-shadow: 1px 1px 6px 2px #2a5298;
   opacity: 0.95;
 }
 
@@ -182,20 +198,20 @@ form.login {
 
 .activity-link {
   color: #1e3c72;
-  text-decoration: none;
+  /* text-decoration: none; */
   transition: 0.25s ease-in-out;
 }
 
 .activity-link:hover {
-  /* transform: rotate(10deg); */
   color: #346bca;
-  
+  text-decoration: none;
 }
 
 .activity-link:hover > .memberIcons {
   box-shadow: 2px 2px 10px 2px #1e3c72;
 }
 .members-nav {
+  color:rgb(243, 243, 243);
   background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
   padding: 26px;
   margin: 0;
@@ -263,18 +279,19 @@ form.login {
 }
 
 .navbar-toggler {
-  color: white;
-  background: transparent;
+  color: rgb(243, 243, 243);
+  /* background: transparent; */
   border: 2px solid rgb(235, 235, 235);
-}
-
-.navbar-toggler-icon {
-  color: white;
   z-index: 1;
 }
 
+.navbar-toggler-icon {
+  color: rgb(243, 243, 243);
+  background:transparent;
+  z-index: 2;
+}
+
 .arrow-icon {
-  /* margin: 5px 3px; */
   transition: transform .75s ease-in-out;
 }
 
@@ -346,7 +363,7 @@ html, body {
   flex-grow: 1;
 }
 
-li {
+/* li {
   background-color: #f1f1f1;
   padding: 10px;
   text-overflow: ellipsis;
@@ -354,7 +371,7 @@ li {
   overflow: hidden;
   font-size: 1.25rem;
   cursor: pointer;
-}
+} */
 
 li:nth-child(odd) {
   background-color: #fcfcfc;
