@@ -45,7 +45,7 @@ module.exports = function(app) {
   });
 
   // route to display park handlebars when icon clicked
-  app.get("/parks", function(req, res) {
+  app.get("/park", function(req, res) {
     res.render("park", { WEATHER_API: process.env.WEATHER_API });
 
   });
