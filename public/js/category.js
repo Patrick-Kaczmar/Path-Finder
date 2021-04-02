@@ -103,7 +103,10 @@ function addPlaces(places, map, latitude, longitude) {
 
 
 function geoWeather(latitude, longitude) {
-    geoWeatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + Math.floor(latitude) + "&lon=" + Math.floor(longitude) + "&appid=2c96103d1d31364a22258e5a870054a8";
+
+    geoWeatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + Math.floor(latitude) + "&lon=" + Math.floor(longitude) + "&appid=" + WEATHER_API;
+    // process.env.WEATHER_API;
+
     // var div=document.createElement('div');
     $.ajax({
         url: geoWeatherURL,
