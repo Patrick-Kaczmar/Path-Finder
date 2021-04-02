@@ -19,7 +19,6 @@ function getLocation() {
         let longitude = currentPosition.coords.longitude;
         result = [latitude, longitude]
         initMap(latitude, longitude);
-        geoWeather(latitude, longitude);
     });
 }
 
@@ -45,7 +44,7 @@ function initMap(latitude, longitude) {
     };
 
     service.nearbySearch(
-        { location: { lat: latitude, lng: longitude }, radius: 5000, type: searchTerm },
+        { location: { lat: latitude, lng: longitude }, radius: 16100, type: searchTerm },
         (results, status, pagination) => {
             if (status !== "OK" || !results) return;
             console.log(results)
@@ -78,6 +77,7 @@ function addPlaces(places, map, latitude, longitude) {
             li.textContent = place.name;
             placesList.appendChild(li);
             li.addEventListener("click", () => {
+                geoWeather(latitude, longitude);
                 let endpoint = place.vicinity;
                 directionsRenderer.setMap(map);
                 calculateAndDisplayRoute(directionsService, directionsRenderer, latitude, longitude, endpoint);
@@ -99,8 +99,10 @@ function addPlaces(places, map, latitude, longitude) {
 
 
 function geoWeather(latitude, longitude) {
+
     geoWeatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + Math.floor(latitude) + "&lon=" + Math.floor(longitude) + "&appid=" + WEATHER_API;
     // process.env.WEATHER_API;
+
     // var div=document.createElement('div');
     $.ajax({
         url: geoWeatherURL,
@@ -170,4 +172,3 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer, latitud
         }
     );
 }
-
