@@ -35,12 +35,12 @@ module.exports = function(app) {
   app.get("/restaurant", function(req, res) {
     res.render("restaurant", { WEATHER_API: process.env.WEATHER_API });
   });
-
-  // route to display park handlebars when icon clicked
-  app.get("/park", function(req, res) {
-    res.render("park", { WEATHER_API: process.env.WEATHER_API });
+  
+  // route to display shoppingMall handlebars when icon clicked
+  app.get("/shoppingMall", function(req, res) {
+    res.render("shoppingMall", { WEATHER_API: process.env.WEATHER_API });
   });
- 
+
   // route to display gym handlebars when icon clicked
   app.get("/gym", function(req, res) {
     res.render("gym", { WEATHER_API: process.env.WEATHER_API });
@@ -51,9 +51,9 @@ module.exports = function(app) {
     res.render("hospital", { WEATHER_API: process.env.WEATHER_API });
   });
 
-  // route to display shoppingMall handlebars when icon clicked
-  app.get("/shoppingMall", function(req, res) {
-    res.render("shoppingMall", { WEATHER_API: process.env.WEATHER_API });
+  // route to display park handlebars when icon clicked
+  app.get("/park", function(req, res) {
+    res.render("park", { WEATHER_API: process.env.WEATHER_API });
   });
 
   // route to display zoo handlebars when icon clicked
