@@ -40,7 +40,8 @@
 <div data-id="shopping_mall" id="container" class="map-container">
     <div id="map"></div>
     <div id="sidebar">
-        <h1 class="near-me-h1">Shopping Near Me<img src="/assets/shopping.png" class="memberIcons activity-pg-icons"></h1>
+        <h1 class="near-me-h1">Shopping Near Me<img src="/assets/shopping.png" class="memberIcons activity-pg-icons">
+        </h1>
         <ul id="places"></ul>
         <button id="more">Load more results</button>
     </div>
@@ -54,7 +55,7 @@
         <main class="hours-gallery-weather-div">
             <aside id="resultHours">
                 <p id="hoursText">
-                   
+
                 </p>
             </aside>
             <section id="gallery">
@@ -66,20 +67,20 @@
             <h3 id="resultWebsite"></h3>
         </footer>
     </div>
+    <div id="savedActivities">
+        <header id="savedHeader">
+            <h3>My Malls</h3>
+        </header>
+        <section>
+            <ul id="savedList">
+            </ul>
+        </section>
+    </div>
 </div>
-<div id="savedActivities">
-    <header id="savedHeader">
-        <h3>My Malls</h3>
-    </header>
-    <section>
-        <ul id="savedList">
-        </ul>
-    </section>
-</div>
-{{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{{!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="/js/category.js"></script> --}}
 
 {{!-- script below should be a variable --}}
-<script
-    src="https://maps.googleapis.com/maps/api/js?key={{GOOG_API}}&libraries=places&callback=getLocation"
+<script src="https://maps.googleapis.com/maps/api/js?key={{GOOG_API}}&libraries=places&callback=getLocation"
     async></script>
