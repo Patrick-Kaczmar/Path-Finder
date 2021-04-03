@@ -35,31 +35,31 @@ module.exports = function(app) {
 
   // route to display restaurant handlebars when icon clicked
   app.get("/restaurant", function(req, res) {
-    res.render("restaurant", { WEATHER_API: process.env.WEATHER_API });
+    res.render("restaurant", {GOOG_API:process.env.GOOG_API, WEATHER_API: process.env.WEATHER_API });
   });
   
   // route to display shoppingMall handlebars when icon clicked
   app.get("/shoppingMall", function(req, res) {
-    res.render("shoppingMall", { WEATHER_API: process.env.WEATHER_API });
+    res.render("shoppingMall", { GOOG_API: process.env.GOOG_API, WEATHER_API: process.env.WEATHER_API });
   });
 
   // route to display gym handlebars when icon clicked
   app.get("/gym", function(req, res) {
-    res.render("gym", { WEATHER_API: process.env.WEATHER_API });
+    res.render("gym", { GOOG_API: process.env.GOOG_API, WEATHER_API: process.env.WEATHER_API });
   });
   
   // hospital route
   app.get("/hospital", function(req, res) {
-    res.render("hospital", { WEATHER_API: process.env.WEATHER_API });
+    res.render("hospital", { GOOG_API: process.env.GOOG_API, WEATHER_API: process.env.WEATHER_API });
   });
 
   // route to display park handlebars when icon clicked
   app.get("/park", function(req, res) {
-    res.render("park", { WEATHER_API: process.env.WEATHER_API });
+    res.render("park", { GOOG_API: process.env.GOOG_API, WEATHER_API: process.env.WEATHER_API });
   });
 
   // route to display zoo handlebars when icon clicked
   app.get("/zoo", function(req, res) {
-    res.render("zoo", { WEATHER_API: process.env.WEATHER_API });
+    res.render("zoo", { GOOG_API: process.env.GOOG_API, WEATHER_API: process.env.WEATHER_API });
   });
 };
