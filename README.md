@@ -25,6 +25,7 @@ This is a full stack app built off the google maps api to allow users to get nea
 * MySql
 * Sequelize
 * Google maps api
+* Open weather api
 
 ## Contributors
 
