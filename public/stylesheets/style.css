@@ -11,6 +11,7 @@ html, body {
   font-family: 'Montserrat', sans-serif;
 }
 
+/* small caps adds a distinctive element to the font style */
 h1, 
 h3,
 .signup-login-h1,
@@ -253,11 +254,6 @@ form.login {
   color: inherit;
 }
 
-.dropdown-item {
-  font-size: 22px;
-  font-variant: normal;
-}
-
 .active {
   color: rgb(235, 235, 235);
   text-decoration: none;
@@ -425,7 +421,7 @@ button:disabled {
   flex-flow: row wrap;
   justify-content: center;
   height: 100%;
-  padding: 15px;
+  padding: 10px;
   width: auto;
 }
 
@@ -451,7 +447,7 @@ button:disabled {
 .resize {
   height: 280px;
   /* width: 300px; */
-  max-width: 450px;
+  max-width: 425px;
 }
 
 #savedActivities {
