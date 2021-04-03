@@ -14,8 +14,6 @@ This is a full stack app built off the google maps api to allow users to get nea
 * [Questions](#Questions)
 
 ## Technologies
-
-* Cloudinary
 * Express
 * Handlebars
 * HTML
@@ -24,9 +22,9 @@ This is a full stack app built off the google maps api to allow users to get nea
 * Bootstrap
 * node.js
 * passport.js
-* Google OAuth
 * MySql
 * Sequelize
+* Google maps api
 
 ## Contributors
 
