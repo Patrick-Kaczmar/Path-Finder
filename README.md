@@ -39,7 +39,7 @@ To use the app you will need to sign in using an email and password to have acce
 ### Deployed application link - https://apple-shortcake-96876.herokuapp.com/
 
 ## Demonstration
-![example-readme-demo](./public/assets/css/burger-demo.gif)
+![example-readme-demo](./public/assets/pathFinder.gif)
 
 ## License
 MIT License - Copyright 2021 Patrick-Kaczmar
