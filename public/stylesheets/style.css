@@ -150,11 +150,13 @@ form.login {
   display: flex;
   justify-content: flex-start;
   flex-flow: row nowrap;
+  max-width: 1580px;
 }
 /* this is an <a> tag */
 .navbar-brand {
-  font-size: 40px;
+  font-size: 38px;
   color: rgb(243, 243, 243);
+  margin: 0 5px;
   transition: .25s ease-in-out;
 }
 
@@ -191,9 +193,7 @@ form.login {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  max-width: 75%;
-  margin: 0 auto;
-  padding: 40px;
+  margin: 5% auto;
 }
 
 .activity-link {
@@ -226,17 +226,17 @@ form.login {
 }
 /* links in the navbar */
 .nav-item {
-  height: 50px;
-  width: 124px;
+  height: 55px;
+  width: 135px;
   background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
   color: rgb(218, 218, 218);
   border: 1px solid transparent;
   border-radius: 8px;
-  text-align: center;
+  /* text-align: center; */
   font-size: 22px;
   transition: 0.15s ease-in-out;
-  margin: 4px 12px;
-  padding: 1px 3px;
+  margin: 4px;
+  padding: 1px;
 }
 
 .nav-item:hover { 
@@ -250,7 +250,6 @@ form.login {
 }
 
 .nav-link:hover {
-  text-overflow: initial;
   color: inherit;
 }
 
@@ -269,6 +268,13 @@ form.login {
 
 .arrow-icon:hover {
   transform: rotate(360deg);
+}
+
+.home-icon,
+.logout-icon {
+  opacity: 0.9;
+  float: right;
+  margin-left: 3px;
 }
 
 .activity-pg-icons {
