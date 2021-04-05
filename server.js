@@ -21,8 +21,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // setting express-handlebars as the engine
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+app.engine("hbs", exphbs({ 
+  defaultLayout: "main",
+  // shortens file extensions to 3 letters
+  extname:  "hbs"
+}));
+app.set("view engine", "hbs");
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
