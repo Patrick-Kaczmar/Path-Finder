@@ -19,6 +19,7 @@ h3,
 .here,
 .navbar-brand,
 .nav-item,
+.result-btn,
 #welcome {
   font-variant: small-caps;
 }
@@ -45,21 +46,19 @@ a:hover {
 
 form.signup,
 form.login {
-  margin-top: 50px;
+  margin-top: 5%;
 }
 
 .signup-login-nav {
-  padding: 15px;
-  background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
-  filter: grayscale(25%);
-  border: none;
-  border-bottom: 2px 0 solid rgb(47, 47, 47);
-  border-radius: 0;
-  margin-bottom: 0;
+  padding: 18px;
+  color: #183262;
 }
 
 .signup-login-arrow-icon {
-  margin: 3px; 
+  margin: 6px; 
+  filter: grayscale(35%);
+  height: 35px;
+  width: 35px;
 }
 
 .signup-login-background {
@@ -67,7 +66,7 @@ form.login {
   height: 100%;
   background-size: cover;
   background-image: url('../assets/wallhaven-28ekym.jpg');
-  filter: grayscale(15%);
+  /* filter: grayscale(15%); */
 }
 
 .signup-login-container {
@@ -80,11 +79,6 @@ form.login {
   justify-content: center;
 }
 
-.signup-login-h1 {
-  text-align: left;
-  color:rgb(243, 243, 243);
-}
-
 .form-group {
   font-size: 20px;
 }
@@ -92,8 +86,8 @@ form.login {
 .form-control {
   margin: 10px 0;
   font-size: 18px;
-  background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
-  filter: grayscale(25%);
+  background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 50%, #2a5298 100%);
+  filter: grayscale(10%);
   color: rgb(235, 235, 235);
   border: 1px solid rgb(47, 47, 47);
   border-radius: 8px;
@@ -109,7 +103,7 @@ form.login {
 .form-control:focus {
   color: rgb(235, 235, 235);
   border: 1px solid rgb(47, 47, 47);
-  box-shadow: 1px 1px 6px 2px #2a5298;
+  box-shadow: 1px 1px 8px 2px #2a5298;
   opacity: 0.95;
 }
 
@@ -138,19 +132,19 @@ form.login {
 .here {
   border-radius: 4px;
   transition: 0.15s ease-in-out;
-  text-decoration: none;
 }
 
 .here:hover,
 .here:active {
   color: #1e3c72;
+  text-decoration: none;
 }
 
 .nav-flex {
   display: flex;
   justify-content: flex-start;
   flex-flow: row nowrap;
-  max-width: 1580px;
+  max-width: 1400px;
 }
 /* this is an <a> tag */
 .navbar-brand {
@@ -167,20 +161,19 @@ form.login {
 .memberIcons {
   border-radius: 50%;
   height: 185px;
-  width: 185px;
+  width: auto;
   cursor: pointer;
-  margin: 20px 40px;
-  filter: grayscale(10%);
+  margin: 1.3rem;
   box-shadow: 2px 2px 10px 2px rgb(77, 77, 77);
-  transition: .15s ease-in-out;
+  transition: transform .3s ease-in-out;
 }
 
 .memberIcons:hover {
-  opacity: 0.8;
+  transform: rotate(30deg);
 }
 
 .iconCaption {
-  font-size: 30px;
+  font-size: 1.75rem; 
   letter-spacing: 0.5px;
 }
 
@@ -193,7 +186,8 @@ form.login {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin: 5% auto;
+  margin: 5% 0;
+  height: auto;
 }
 
 .activity-link {
@@ -210,7 +204,6 @@ form.login {
   color:rgb(243, 243, 243);
   background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
   padding: 26px;
-  margin: 0;
   border: none !important;
   border-radius: none !important;
   box-shadow: 1px 2px 20px 0 #112B43;
@@ -232,7 +225,6 @@ form.login {
   color: rgb(218, 218, 218);
   border: 1px solid transparent;
   border-radius: 8px;
-  /* text-align: center; */
   font-size: 22px;
   transition: 0.15s ease-in-out;
   margin: 4px;
@@ -242,6 +234,7 @@ form.login {
 .nav-item:hover { 
   color:rgb(243, 243, 243);
   border: 1px solid rgb(235, 235, 235);
+  box-shadow: 1px 1px 8px 2px #9fc1ee;
   text-decoration: none;
 }
 
@@ -292,7 +285,7 @@ form.login {
 .map-container {
   width: 100%; 
   display: flex;
-  flex-flow:row wrap;
+  flex-flow: row wrap;
 }
 
 .content-wrapper {
@@ -343,7 +336,6 @@ li {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  /* font-size: 1.25rem; */
   cursor: pointer;
 }
 
@@ -360,7 +352,6 @@ li:nth-child(odd) {
   border-radius: 5px;
   padding: 2px 8px;
   font-style: 'Montserrat', 'sans-serif';
-  font-variant: small-caps;
 }
 /* was button, using id for specificity */
 #more {
@@ -408,7 +399,6 @@ button:disabled {
   text-align: center;
   margin: 0;
   padding: 5px;
-  /* display: block; */
 }
 
 #resultAddress {
@@ -453,7 +443,7 @@ button:disabled {
 .resize {
   height: 280px;
   /* width: 300px; */
-  max-width: 425px;
+  max-width: 415px;
 }
 
 #savedActivities {
