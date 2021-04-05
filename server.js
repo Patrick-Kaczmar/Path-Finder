@@ -24,8 +24,9 @@ app.use(passport.session());
 app.engine("hbs", exphbs({ 
   defaultLayout: "main",
   // shortens file extensions to 3 letters
-  extname:  "hbs"
+  extname: "hbs"
 }));
+
 app.set("view engine", "hbs");
 
 // Requiring our routes
@@ -38,4 +39,3 @@ db.sequelize.sync().then(function() {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
   });
 });
-

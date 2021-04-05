@@ -196,8 +196,6 @@ form.login {
   text-align: center;
 }
 
-
-
 .activity-link {
   color: #1e3c72;
   transition: 0.25s ease-in-out;
@@ -216,7 +214,6 @@ form.login {
   border-radius: none !important;
   box-shadow: 1px 2px 20px 0 #112B43;
 }
-
 
 .activity-nav {
   box-shadow: none;
