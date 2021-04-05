@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg members-nav activity-nav">
+  {{> navbar }}
+</nav>
+<div data-id="gym" id="container" class="map-container">
+    <div id="map"></div>
+    <div id="sidebar">
+        <h1 id="results" class="near-me-h1">
+            Gyms Near Me 
+            <img src="/assets/barbell.png" class="memberIcons activity-pg-icons">
+          </h1>
+        <ul id="places"></ul>
+        <button id="more">Load more results</button>
+    </div>
+</div>
+<div class="content-wrapper">
+  {{> results }}
+  {{> saved }}
+</div>
+
+{{!-- script below should be a variable --}}
+<script src="https://maps.googleapis.com/maps/api/js?key={{GOOG_API}}&libraries=places&callback=getLocation"
+  async></script>
