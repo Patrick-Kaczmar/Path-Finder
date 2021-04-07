@@ -32,9 +32,12 @@ module.exports = function(app) {
   // app.get("/api/restaurant", function(req, res) {
   //   if(!req.restaurant) {
   //     res.json({});
+  //     console.log(res);
   //   }
   //   else {
+  //     db.Restaurant.findAll({})
   //     console.log(res.json);
+
   //     res.json({
   //       name: req.restaurant.name,
   //       website: req.restaurant.website,

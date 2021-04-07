@@ -148,7 +148,7 @@ function saveResult(place) {
     postData(saveData);
 };
 
-// function to send post route 
+// function to send post route
 function postData(saveData){
     let activityType = $("#container").data("id");
     if (activityType === "restaurant"){
