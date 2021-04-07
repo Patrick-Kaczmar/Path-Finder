@@ -1,3 +1,6 @@
+// const { DataTypes } = require("sequelize/types");
+
+
 let map;
 let service;
 let resultName = document.getElementById("resultName");
@@ -135,7 +138,75 @@ function saveResult(place) {
     const saveLi = document.createElement("li");
     saveLi.append(saveUrl);
     savedList.append(saveLi);
+
+    let saveData = {
+        name: place.name,
+        website: website,
+    }
+    console.log(saveData);
+    // calling post function
+    postData(saveData);
 };
+
+// function to send post route 
+function postData(saveData){
+    let activityType = $("#container").data("id");
+    if (activityType === "restaurant"){
+        $.ajax("/api/restaurant", {
+            type: "POST",
+            data: saveData, 
+        }).then(function() {
+            // location.reload();
+        })
+    }
+    else if (activityType === "shopping_mall"){
+        $.ajax("/api/mall", {
+            type: "POST",
+            data: saveData, 
+        }).then(function() {
+            console.log("sent ajax post route! :)");
+            // location.reload();
+        })
+    }
+    else if (activityType === "gym") {
+        $.ajax("/api/gym", {
+            type: "POST",
+            data: saveData, 
+        }).then(function() {
+            console.log("sent ajax post route! :)");
+            // location.reload();
+        })
+    }
+    else if (activityType === "hospital"){
+        $.ajax("/api/hospital", {
+            type: "POST",
+            data: saveData, 
+        }).then(function() {
+            console.log("sent ajax post route! :)");
+            // location.reload();
+        })
+    }
+    else if (activityType === "park"){
+        $.ajax("/api/park", {
+            type: "POST",
+            data: saveData, 
+        }).then(function() {
+            console.log("sent ajax post route! :)");
+            // location.reload();
+        })
+    }
+    else if (activityType === "zoo"){
+        $.ajax("/api/zoo", {
+            type: "POST",
+            data: saveData, 
+        }).then(function() {
+            console.log("sent ajax post route! :)");
+            // location.reload();
+        })
+    }
+};
+
+
 
 function geoWeather(lat, long) {
 
