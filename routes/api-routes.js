@@ -15,8 +15,6 @@ module.exports = function(app) {
   // otherwise send back an error
    // process.env.WEATHER_API
   app.post("/api/signup", function(req, res) {
-   
-    
     db.User.create({
       email: req.body.email,
       password: req.body.password,
@@ -27,6 +25,120 @@ module.exports = function(app) {
       .catch(function(err) {
         res.status(401).json(err);
       });
+  });
+
+
+  // // getting saved restaurants from db if they exist
+  // app.get("/api/restaurant", function(req, res) {
+  //   if(!req.restaurant) {
+  //     res.json({});
+  //     console.log(res);
+  //   }
+  //   else {
+  //     db.Restaurant.findAll({})
+  //     console.log(res.json);
+
+  //     res.json({
+  //       name: req.restaurant.name,
+  //       website: req.restaurant.website,
+  //     })
+  //   }
+  // });
+
+  // restaurant saving route
+  app.post("/api/restaurant", function(req, res) {
+    console.log("api POST route called")
+    console.log(req.body);
+    db.Restaurant.create({
+      name: req.body.name,
+      website: req.body.website,
+    })
+    .then(function() {
+      console.log("restaurant added");
+      // location.reload()
+    })
+    .catch(function(err) {
+      res.status(401).json(err);
+    })
+  });
+  
+  // Mall post route
+  app.post("/api/mall", function(req, res) {
+    console.log("api POST route called")
+    db.Mall.create({
+      name: req.body.name,
+      website: req.body.website,
+    })
+    .then(function() {
+      console.log("Mall added");
+      // location.reload()
+    })
+    .catch(function(err) {
+      res.status(401).json(err);
+    })
+  });
+
+  // route for saving a gym to database
+  app.post("/api/gym", function(req, res) {
+    db.Gym.create({
+      name: req.body.name,
+      website: req.body.website,
+    })
+    .then(function() {
+      console.log('gym added');
+      // location.reload()
+    })
+    .catch(function(err) {
+      res.status(401).json(err);
+    });
+  });
+
+  // hospital saving route
+  app.post("/api/hospital", function(req, res) {
+    console.log("api POST route called")
+    db.Hospital.create({
+      name: req.body.name,
+      website: req.body.website,
+    })
+    .then(function() {
+      console.log("hospital added");
+      // location.reload()
+    })
+    .catch(function(err) {
+      res.status(401).json(err);
+    })
+  });
+  
+  // park saving route
+  app.post("/api/park", function(req, res) {
+    console.log("api POST route called")
+    db.Park.create({
+      name: req.body.name,
+      website: req.body.website,
+    })
+    .then(function() {
+      console.log("park added");
+      // location.reload()
+    })
+    .catch(function(err) {
+      res.status(401).json(err);
+    })
+  });
+    
+  // zoo saving route
+  app.post("/api/zoo", function(req, res) {
+    console.log("api POST route called")
+    db.Zoo.create({
+      name: req.body.name,
+      website: req.body.website,
+    })
+    .then(function() {
+      console.log("zoo added");
+      // location.reload()
+    })
+    .catch(function(err) {
+      res.status(401).json(err);
+    })
   });
 
   // Route for logging user out
